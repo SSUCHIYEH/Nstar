@@ -1,0 +1,48 @@
+/*-------------------- intro_1 start --------------------*/
+.intro_1_container {
+    width: 100%;
+    height: 780px;
+    background-color: #ffe931;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border: 1px solid black;
+    background-position: 0 -40px;
+  }
+  .intro_1_item {
+    padding-top: 256px;
+    padding-left: 143px;
+  }
+  .intor_1_describe {
+    margin-top: 40px;
+    font-size: 16px;
+    width: 372px;
+    line-height: 24px;
+  }
+  /*-------------------- intro_1 end --------------------*/
+  
+  /*-------------------- intro_2 start --------------------*/
+  .intro_2_container {
+    height: 700px;
+    display: flex;
+    border: 1px solid black;
+  }
+  .intro_2_img {
+    width: 100%;
+    padding-top: 55px;
+    padding-left: 84px;
+  }
+  .intro_2_describe {
+    width: 100%;
+    padding-top: 229px;
+    padding-left: 72px;
+  }
+  .intro_2_title {
+    font-size: 36px;
+  }
+  .intro_2_text {
+    margin-top: 50px;
+    width: 385px;
+    font-size: 16px;
+    line-height: 24px;
+  }
+  /*-------------------- intro_2 end --------------------*/
