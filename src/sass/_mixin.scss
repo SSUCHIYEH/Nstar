@@ -1,0 +1,14 @@
+@mixin btn__Unfill($bordercolor) {
+    padding: 10px 24px;
+    border: 1px solid $bordercolor;
+    box-sizing: border-box;
+    border-radius: 2px;
+    color: $bordercolor;
+}
+
+@mixin btn__Fill($bgcolor) {
+    padding: 10px 24px;
+    background: $bordercolor;
+    border-radius: 2px;
+    color: white;
+}
