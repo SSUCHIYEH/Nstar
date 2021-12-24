@@ -12,3 +12,16 @@
     border-radius: 2px;
     color: white;
 }
+
+
+@mixin md {
+    @media (max-width:768px) {
+        @content
+    }
+}
+
+@mixin sm {
+    @media (max-width:375px) {
+        @content
+    }
+}
