@@ -7,4 +7,4 @@ function UserCheckout() {
     );
   }
   
-  export default UserCheckout;
+export default UserCheckout;

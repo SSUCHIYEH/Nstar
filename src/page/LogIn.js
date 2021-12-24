@@ -12,9 +12,9 @@ function LogIn() {
             <form className="login_form">
                <p className="font_24">歡迎回到Nstar!</p>
                <p className="font_20 mt_48">電子郵件</p>
-               <p><input className="input mt_16" type="text" name="userName" placeholder="輸入您的電子郵件" required /></p>
+               <p><input className="input mt_16" type="text" name="userEmail" placeholder="輸入您的電子郵件" required /></p>
                <p className="font_20 mt_48">密碼</p>
-               <p><input className="input mt_16" type="password" name="userName" placeholder="輸入您的密碼" required /></p>
+               <p><input className="input mt_16" type="password" name="userPassword" placeholder="輸入您的密碼" required /></p>
                <Link to={"/"}>
                <div className="btn_selected mt_48">登入</div>
                </Link>
