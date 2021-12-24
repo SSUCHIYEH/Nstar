@@ -78,9 +78,9 @@ export default function NavBar() {
                             </NavItem>
                         </div>
                     </li>
-                    <li className="li"><a href="/">Log in</a></li>
+                    <li className="li"><a href="/login">Log in</a></li>
                     <li className="li li-btn">
-                        <NavItem to="/product/category/women_bottom" >Sign up</NavItem>
+                        <NavItem to="/signup" >Sign up</NavItem>
                     </li>
                 </ul>
 

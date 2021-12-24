@@ -17,7 +17,10 @@ function App() {
         <Navbar />
         {renderRoutes(routes)}
         <Footer />
+       
+
       </BrowserRouter>
+      
   );
 }
 
