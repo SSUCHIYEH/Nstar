@@ -3,6 +3,7 @@ import ProductDetail from "../page/ProductDetail";
 import UserCart from "../page/UserCart";
 import Home from '../page/Home';
 import LogIn from '../page/LogIn';
+import SignUp from '../page/SignUp';
 import UserCheckout from '../page/UserCheckout';
 import UserCheckoutSuccess from '../page/UserCheckoutSuccess';
 
@@ -40,7 +41,7 @@ const routes = [
     },
     {
         path:'/signup',
-        component: LogIn,
+        component: SignUp,
         exact: true,
     },
     {
