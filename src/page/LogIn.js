@@ -19,9 +19,9 @@ function LogIn() {
                <div className="btn_selected mt_48">登入</div>
                </Link>
                <div className="display_flex mt_16">
-               <p>還沒有帳號？</p>
+               <p className="font_gray">還沒有帳號？</p>
                <Link to={"/signup"}>
-               <p className="font_gray">點我註冊</p>
+               <p className="font_black">點我註冊</p>
                </Link>
                </div>
             </form>

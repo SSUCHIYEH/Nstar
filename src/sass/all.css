@@ -855,6 +855,10 @@ img.star-img {
   color: #FFE931;
 }
 
+.font_black {
+  color: #2F2F2F;
+}
+
 /*--------display---------*/
 .display_flex {
   display: -webkit-box;
@@ -873,6 +877,10 @@ img.star-img {
 
 .mt_16 {
   margin-top: 16px;
+}
+
+.mt_8 {
+  margin-top: 8px;
 }
 
 /*-------------------- intro_1 start --------------------*/

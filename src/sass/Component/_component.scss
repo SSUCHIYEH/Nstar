@@ -4,7 +4,6 @@
 
 /*--------input---------*/
 .input{
-
    border: 0;
    outline: 0;
    padding: 8px 0;
@@ -26,6 +25,9 @@
 .font_yellow{
     color: $main_yellow;
 }
+.font_black{
+    color: $main_black;
+}
 
 /*--------display---------*/
 .display_flex{
@@ -39,8 +41,9 @@
 .mt_32{
     margin-top: 32px;
 }
-
-
 .mt_16{
     margin-top: 16px;
+}
+.mt_8{
+    margin-top: 8px;
 }
