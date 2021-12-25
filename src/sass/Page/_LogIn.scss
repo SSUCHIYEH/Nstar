@@ -13,10 +13,10 @@
     min-width: 512px; 
    // width: 512px;
     height: 100%;
-    @include pad{
+    @include md{
        display: none;
     }
-    @include mobile{
+    @include sm{
         display: none;
       }
 }
@@ -31,20 +31,20 @@
 .login_form{
     padding-top: 144px;
     padding-left: 160px;
-    @include pad{
+    @include md{
         padding-left: 128px; 
      }
-     @include mobile{
+     @include sm{
         padding-left: 48px; 
     }
 }
 .signup_form{
     padding-top: 80px;
     padding-left: 160px;
-    @include pad{
+    @include md{
         padding-left: 128px; 
      }
-     @include mobile{
+     @include sm{
         padding-left: 48px; 
     }
 }

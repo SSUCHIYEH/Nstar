@@ -13,12 +13,12 @@
     color: white;
 }
 
-@mixin pad{
+@mixin md{
     @media(max-width:768px){
       @content;
     }
   }
-  @mixin mobile{
+  @mixin sm{
     @media(max-width:375px){
       @content;
     }
