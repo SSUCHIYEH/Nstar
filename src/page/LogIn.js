@@ -1,6 +1,7 @@
 import img_login from "../assests/landing/login.png";
 import { Link } from 'react-router-dom';
 
+
 function LogIn() {
    return (
 

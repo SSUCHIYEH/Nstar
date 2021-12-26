@@ -1,0 +1,84 @@
+@import"../mixin";
+.userCheckout_container{
+    @include containerBorder;
+    margin-top:$padding_top;
+    padding: 88px 120px;
+    @include md{
+        padding: 88px 36px;
+    }
+    @include sm{
+        padding: 24px 16px;
+    }
+}
+.userCheckout_order{
+    border: 1px solid $main_black;
+    padding:48px;
+    @include md{
+        padding:24px;
+    }
+}
+.userCheckout_payment{
+    border: 1px solid $main_black;
+    padding:48px;
+    @include md{
+        padding:24px;
+    }
+}
+.userCheckout_payBtn{
+    width: max-content;
+    border:0;
+    padding: 16px 40px;
+    background: $main_black;
+    border-radius: 2px;
+    color: white;
+    &:hover{
+        background: $main_black_hover;
+    }
+}
+.userCheckout_shipDetail{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    @include sm{
+        flex-direction: column;
+        align-items:flex-start;
+    }
+}
+.userCheckout_payment_switch{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    @include md{
+        flex-direction: column;
+        align-items:flex-start;
+    }
+    @include sm{
+        flex-direction: column;
+        align-items:flex-start;
+    }
+}
+.userCheckout_switchItem{
+    display: flex;
+}
+.userCheckout_switch_a{
+    padding-left: 48px;
+    @include md{
+        padding-left:0;
+        padding-top: 36px;
+    }
+    @include sm{
+        padding-left:0;
+        padding-top: 36px;
+    }
+}
+.userCheckout_switch_b{
+    padding-left: 16px;
+    @include md{
+        padding-top: 36px;
+    }
+    @include sm{
+        padding-top: 36px;
+    }
+
+}
