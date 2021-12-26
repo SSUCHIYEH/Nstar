@@ -1,4 +1,4 @@
-@mixin btn__Unfill($bordercolor) {
+@mixin btn_Unfill($bordercolor:$main_black) {
     padding: 10px 24px;
     border: 1px solid $bordercolor;
     box-sizing: border-box;
@@ -6,22 +6,20 @@
     color: $bordercolor;
 }
 
-@mixin btn__Fill($bgcolor) {
+@mixin btn_Fill($bgcolor:$main_black) {
     padding: 10px 24px;
-    background: $bordercolor;
+    background: $bgcolor;
     border-radius: 2px;
     color: white;
 }
 
-
-@mixin md {
-    @media (max-width:768px) {
-        @content
+@mixin md{
+    @media(max-width:768px){
+      @content;
     }
-}
-
-@mixin sm {
-    @media (max-width:375px) {
-        @content
+  }
+  @mixin sm{
+    @media(max-width:375px){
+      @content;
     }
-}
+  }

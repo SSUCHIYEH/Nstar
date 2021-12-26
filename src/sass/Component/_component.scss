@@ -1,2 +1,49 @@
 @import "./header";
 @import "./footer";
+@import "./btn";
+
+/*--------input---------*/
+.input{
+   border: 0;
+   outline: 0;
+   padding: 8px 0;
+   border-bottom: 1px solid $main_black;
+   width: 268px;
+}
+
+/*--------字體大小---------*/
+.font_20{
+    font-size: 20px;
+}
+.font_24{
+    font-size: 24px;
+}
+/*--------字體顏色---------*/
+.font_gray{
+    color: $gray-400;
+}
+.font_yellow{
+    color: $main_yellow;
+}
+.font_black{
+    color: $main_black;
+}
+
+/*--------display---------*/
+.display_flex{
+    display: flex;
+}
+
+/*--------margin---------*/
+.mt_48{
+    margin-top: 48px;
+}
+.mt_32{
+    margin-top: 32px;
+}
+.mt_16{
+    margin-top: 16px;
+}
+.mt_8{
+    margin-top: 8px;
+}

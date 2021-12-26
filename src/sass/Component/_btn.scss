@@ -1,13 +1,17 @@
+@import"../mixin";
+
 .btn_selected{
-    @include btn__Fill($main_black);
+    width: max-content;
+    @include btn_Fill($main_black);
     &:hover {
-        @include btn__Fill($main_black_hover);
+        @include btn_Fill($main_black_hover);
     }
 }
 
 .btn_unSelected{
-    @include btn__Unfill($main_black);
+    width: max-content;
+    @include btn_Unfill($main_black);
     &:hover {
-        @include btn__Unfill($main_yellow);
+        @include btn_Unfill($main_yellow);
     }
 }

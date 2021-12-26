@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
@@ -784,6 +785,99 @@ img.star-img {
   height: 32px;
 }
 
+.btn_selected {
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  padding: 10px 24px;
+  background: #2F2F2F;
+  border-radius: 2px;
+  color: white;
+}
+
+.btn_selected:hover {
+  padding: 10px 24px;
+  background: #4A4A4A;
+  border-radius: 2px;
+  color: white;
+}
+
+.btn_unSelected {
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  padding: 10px 24px;
+  border: 1px solid #2F2F2F;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-radius: 2px;
+  color: #2F2F2F;
+}
+
+.btn_unSelected:hover {
+  padding: 10px 24px;
+  border: 1px solid #FFE931;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-radius: 2px;
+  color: #FFE931;
+}
+
+/*--------input---------*/
+.input {
+  border: 0;
+  outline: 0;
+  padding: 8px 0;
+  border-bottom: 1px solid #2F2F2F;
+  width: 268px;
+}
+
+/*--------字體大小---------*/
+.font_20 {
+  font-size: 20px;
+}
+
+.font_24 {
+  font-size: 24px;
+}
+
+/*--------字體顏色---------*/
+.font_gray {
+  color: #9B9B9B;
+}
+
+.font_yellow {
+  color: #FFE931;
+}
+
+.font_black {
+  color: #2F2F2F;
+}
+
+/*--------display---------*/
+.display_flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+/*--------margin---------*/
+.mt_48 {
+  margin-top: 48px;
+}
+
+.mt_32 {
+  margin-top: 32px;
+}
+
+.mt_16 {
+  margin-top: 16px;
+}
+
+.mt_8 {
+  margin-top: 8px;
+}
+
 /*-------------------- intro_1 start --------------------*/
 .intro_1_container {
   width: 100%;
@@ -843,4 +937,76 @@ img.star-img {
 }
 
 /*-------------------- intro_2 end --------------------*/
+.login_container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  height: 720px;
+  margin-top: 64px;
+  border: 1px solid #000000;
+  border-bottom: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.login_image {
+  min-width: 512px;
+  height: 100%;
+}
+
+@media (max-width: 768px) {
+  .login_image {
+    display: none;
+  }
+}
+
+@media (max-width: 375px) {
+  .login_image {
+    display: none;
+  }
+}
+
+.login_image_img {
+  width: 100%;
+  height: 100%;
+}
+
+.login_input {
+  width: 768px;
+}
+
+.login_form {
+  padding-top: 144px;
+  padding-left: 160px;
+}
+
+@media (max-width: 768px) {
+  .login_form {
+    padding-left: 128px;
+  }
+}
+
+@media (max-width: 375px) {
+  .login_form {
+    padding-left: 48px;
+  }
+}
+
+.signup_form {
+  padding-top: 80px;
+  padding-left: 160px;
+}
+
+@media (max-width: 768px) {
+  .signup_form {
+    padding-left: 128px;
+  }
+}
+
+@media (max-width: 375px) {
+  .signup_form {
+    padding-left: 48px;
+  }
+}
 /*# sourceMappingURL=all.css.map */
