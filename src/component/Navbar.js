@@ -5,12 +5,14 @@ import { Badge } from "antd";
 import landind_page_img from '../assests/Icon/logo.png'
 import search_icon from "../assests/Icon/loupe.png"
 import like_icon from '../assests/Icon/like.png'
+import account_icon from '../assests/Icon/account.png'
 import cart_icon from '../assests/Icon/shopping-cart-outline.png'
 import { useSelector } from "react-redux";
 
 
 export default function NavBar() {
-    let cartItems = useSelector((state) => state.reducer.cartItems);
+
+    const { userInfo } = useSelector((state) => state.userSignIn);
     //const { state: { cartItems } } = useContext(StoreContext);
     const [active, setAcitve] = useState(false);
     const [ClassName, setClassname] = useState("collapse hide");
@@ -30,6 +32,9 @@ export default function NavBar() {
 
         }
     }, [active])
+    useEffect(()=>{
+        console.log(localStorage.getItem('userInfo'));
+    },[])
 
 
     return (
@@ -65,9 +70,6 @@ export default function NavBar() {
                             <img alt="" className="navlist-icon" src={search_icon} />
                         </NavItem>
                     </li>
-                    <li className="li" >
-                        <NavItem to="/favorite" > <img alt="" className="navlist-icon" src={like_icon} /></NavItem>
-                    </li>
                     <li className="li">
                         <div onMouseEnter={toggle}>
                             <NavItem to="/usercart">
@@ -78,10 +80,19 @@ export default function NavBar() {
                             </NavItem>
                         </div>
                     </li>
-                    <li className="li"><a href="/login">Log in</a></li>
-                    <li className="li li-btn">
-                        <NavItem to="/signup" >Sign up</NavItem>
-                    </li>
+                    {
+                        userInfo ?
+                            <li className="li">
+                                <a href="/"><img alt="" className="navlist-icon" src={account_icon} /></a>
+                            </li>
+                            :
+                            <>
+                                <li className="li"><a href="/login">Log in</a></li>
+                                <li className="li li-btn">
+                                    <NavItem to="/signup" >Sign up</NavItem>
+                                </li>
+                            </>
+                    }
                 </ul>
 
             </nav>
