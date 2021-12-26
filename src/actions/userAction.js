@@ -2,6 +2,7 @@ import {
     USER_SUCCESS_LOGIN,
     USER_FAIL_LOGIN,
     USER_REMENBER_LOGIN,
+    USER_LOGOUT,
 } from '../const/constants';
 import { useDispatch} from "react-redux";
 import {signInWithEmailPassword} from '../api/userAPI.js';
@@ -31,4 +32,9 @@ export const login = (userInfo) => async(dispatch) => {
     }catch(e){
         console.log(e);
     }
+}
+
+export const logout= () =>async(dispatch)=>{
+    dispatch({type:USER_LOGOUT});
+    localStorage.removeItem("userInfo");
 }

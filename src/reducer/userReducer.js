@@ -2,6 +2,7 @@ import {
     USER_SUCCESS_LOGIN,
     USER_FAIL_LOGIN,
     USER_REMENBER_LOGIN,
+    USER_LOGOUT,
 } from '../const/constants';
 
 
@@ -29,6 +30,11 @@ export const userSignInReducer = ( state = intialstate, action) => {
                 return{
                     ...state,
                     remenber: action.payload,
+                }
+            case USER_LOGOUT:
+                return{
+                    ...state,
+                    userInfo:null,
                 }
         default:
             return state;

@@ -5,7 +5,8 @@
     background-color: #ffe931;
     background-size: cover;
     background-repeat: no-repeat;
-    border: 1px solid black;
+    border-top: 1px solid $main_black;
+    border-bottom: 1px solid $main_black;
     background-position: 0 -40px;
   }
   .intro_1_item {
@@ -24,7 +25,8 @@
   .intro_2_container {
     height: 700px;
     display: flex;
-    border: 1px solid black;
+    border-top: 1px solid $main_black;
+    border-bottom: 1px solid $main_black;
   }
   .intro_2_img {
     width: 100%;
