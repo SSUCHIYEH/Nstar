@@ -10,7 +10,6 @@ import {routes} from './utils/route';
 import { renderRoutes } from 'react-router-config';
 import Footer from './component/Footer.js'
 import Navbar from './component/Navbar';
-import UserCart from './page/UserCart.js'
 
 function App() {
   return (
@@ -18,6 +17,7 @@ function App() {
         <Navbar />
         {renderRoutes(routes)}
         <Footer />
+        
       </BrowserRouter>
       
   );

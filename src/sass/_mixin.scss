@@ -1,25 +1,35 @@
-@mixin btn_Unfill($bordercolor: $main_black) {
-  padding: 10px 24px;
-  border: 1px solid $bordercolor;
+@mixin btn_Unfill($bordercolor:$main_black) {
+    padding: 8px 24px;
+    border: 1px solid $bordercolor;
+    box-sizing: border-box;
+    border-radius: 2px;
+    color: $bordercolor;
+    background-color: white;
+}
+
+@mixin btn_Fill($bgcolor:$main_black) {
+    padding: 8px 24px;
+    background: $bgcolor;
+    border-radius: 2px;
+    border: 0;
+    color: white;
+}
+
+@mixin containerBorder {
+  border: 1px solid $main_black;
+  border-bottom: 0;
   box-sizing: border-box;
-  border-radius: 2px;
-  color: $bordercolor;
 }
 
-@mixin btn_Fill($bgcolor: $main_black) {
-  padding: 10px 24px;
-  background: $bgcolor;
-  border-radius: 2px;
-  color: white;
-}
-
-@mixin md {
-  @media (max-width: 768px) {
-    @content;
+@mixin md{
+    @media(max-width:768px){
+      @content;
+    }
   }
-}
+
 @mixin sm {
   @media (max-width: 375px) {
     @content;
   }
 }
+
