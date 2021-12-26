@@ -3,6 +3,8 @@ import {
     USER_FAIL_LOGIN,
     USER_REMENBER_LOGIN,
     USER_LOGOUT,
+    USER_SUCCESS_REGISTER,
+    USER_FAIL_REGISTER
 } from '../const/constants';
 
 
@@ -12,7 +14,11 @@ const intialstate ={
     error:''
 };
 
-export const userSignInReducer = ( state = intialstate, action) => {
+export const userSignInReducer = ( state = {
+    userInfo:null,
+    remenber: true,
+    error:''
+}, action) => {
     switch(action.type) {
         case USER_SUCCESS_LOGIN:
             return{
@@ -40,3 +46,25 @@ export const userSignInReducer = ( state = intialstate, action) => {
             return state;
     }
 }
+
+export const userRegisterReducer = (state = {
+    userInfo: null,
+    error: '',
+},action) => {
+    switch (action.type){
+        case USER_SUCCESS_REGISTER:
+            return {
+                ...state,
+                userInfo: action.payload,
+                error: '',
+            };
+        case USER_FAIL_REGISTER:
+            return {
+                ...state,
+                userInfo:null,
+                error: action.payload,
+            };
+        default:
+            return state;
+    }
+};

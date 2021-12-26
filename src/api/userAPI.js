@@ -10,3 +10,20 @@ export const signInWithEmailPassword = async (email, password) => {
       return { status: err.response.status, detail: err.response.data.detail };
     }
   };
+
+  export const registerWithEmailPassword = async (name,email,password) => {
+    console.log(name,email,password);
+    try{
+      const url = `${baseURL}/api/v1/users/user/register`
+      let resp = await axios.post(url, {
+        username:name,
+        email:email,
+        image:"https://reurl.cc/kL4v9G",
+        is_admin:true,
+        password:password});
+      return { status:resp.status, user:resp.data };
+    }catch(e){
+      return { status:e.response.status, detail: e.response.data.detail };
+    }
+  };
+

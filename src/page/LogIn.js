@@ -1,7 +1,7 @@
 import img_login from "../assests/landing/login.png";
 import { Link } from 'react-router-dom';
 import { useForm } from "react-hook-form";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { login } from "../actions/userAction";
 import { signInWithEmailPassword } from "../api/userAPI";
@@ -18,7 +18,6 @@ function LogIn() {
    const onSubmit = async (value) => {
       try{
          console.log(value);
-         const resp = await signInWithEmailPassword(value.email, value.password);
          await dispatch(login(value)); 
       }catch (e) {
          console.log(e);
@@ -44,7 +43,7 @@ function LogIn() {
                {/* <Link to={"/"}>
                <div className="btn_selected mt_48">登入</div>
                </Link> */}
-               <input className="btn_selected mt_48" type="submit"/>
+               <input className="btn_selected mt_48" type="submit" value="登入"/>
                <div className="display_flex mt_16">
                <p className="font_gray">還沒有帳號？</p>
                <Link to={"/signup"}>
