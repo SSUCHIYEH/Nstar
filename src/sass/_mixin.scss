@@ -20,6 +20,11 @@
   border-bottom: 0;
   box-sizing: border-box;
 }
+@mixin lg{
+  @media(max-width:1024px){
+    @content;
+  }
+}
 
 @mixin md{
     @media(max-width:768px){

@@ -4,120 +4,127 @@
 @import "./modal";
 
 /*--------input---------*/
-.input{
-   border: 0;
-   outline: 0;
-   padding: 8px 0;
-   border-bottom: 1px solid $main_black;
-   width: 300px;
-   @include sm{
-    width: 268px;
-   }
+.input {
+    border: 0;
+    outline: 0;
+    padding: 8px 0;
+    border-bottom: 1px solid $main_black;
+    width: 300px;
+    @include sm {
+        width: 268px;
+    }
 }
 /*--------line---------*/
-.line{
+.line {
     border-bottom: 1px solid $main_black;
 }
 /*--------image大小---------*/
-.img_36{
-    width:36px;
-    height:36px;
+.img_26 {
+    width: 26px;
+    height: 26px;
 }
-.img_64{
-    width:64px;
-    height:64px;
-
+.img_36 {
+    width: 36px;
+    height: 36px;
 }
-
+.img_64 {
+    width: 64px;
+    height: 64px;
+}
 
 /*--------字體大小---------*/
-.font_20{
+.font_20 {
     font-size: 20px;
 }
-.font_24{
+.font_24 {
     font-size: 24px;
 }
-.font_36{
+.font_36 {
     font-size: 36px;
 }
 /*--------字體顏色---------*/
-.font_gray{
+.font_gray {
     color: $gray-400;
 }
-.font_yellow{
+.font_yellow {
     color: $main_yellow;
 }
-.font_black{
+.font_black {
     color: $main_black;
 }
-.bg_y{
+.bg_y {
     background-color: aquamarine;
 }
-   
 
 /*--------display---------*/
-.display_flex{
+.display_flex {
     display: flex;
 }
-.display_center{
+.display_center {
     display: flex;
     flex-direction: row;
     align-items: center;
-
 }
-.display_center_between{
+.display_setCenter {
+    display: flex;
+    flex-direction: column;
+    //justify-content: center;
+   align-items:center;
+    padding:0;
+   
+}
+
+.display_center_between {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
 }
-.display_center_end{
+.display_center_end {
     display: flex;
     flex-direction: row;
     justify-content: end;
     align-items: flex-end;
 }
 /*--------width---------*/
-.w_300{
+.w_300 {
     width: 300px;
 }
 
-
 /*--------margin---------*/
-.mt_48{
+.mt_48 {
     margin-top: 48px;
 }
-.mt_36{
+.mt_36 {
     margin-top: 36px;
 }
-.mt_32{
+.mt_32 {
     margin-top: 32px;
 }
-.mt_24{
+.mt_24 {
     margin-top: 24px;
 }
-.mt_16{
+.mt_16 {
     margin-top: 16px;
 }
-.mt_8{
+.mt_8 {
     margin-top: 8px;
 }
 
-.mb_36{
+.mb_36 {
     margin-bottom: 36px;
 }
-.mb_24{
+.mb_24 {
     margin-bottom: 24px;
 }
 
-
 /*--------padding---------*/
-.pl_48{
+.pl_48 {
     padding-left: 48px;
 }
-.pl_24{
+.pl_24 {
     padding-left: 24px;
 }
-.pl_16{
+.pl_16 {
     padding-left: 16px;
 }
