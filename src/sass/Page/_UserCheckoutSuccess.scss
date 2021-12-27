@@ -1,0 +1,28 @@
+@import"../mixin";
+.UserCheckoutSuccess_container{
+  
+    @include containerBorder;
+    margin-top:$padding_top;
+    padding:88px 120px;
+    @include md{
+        padding:88px 36px;
+      }
+      @include sm{
+        padding:88px 16px;
+    }
+
+}
+.UserCheckoutSuccess_successDetail{
+    min-width: 1024px;
+    border: 1px solid $main_black;
+    padding: 48px;
+    @include lg{
+        min-width: 768px;
+    }
+    @include md{
+      min-width: 500px;
+    }
+    @include sm{
+        min-width: 343px;
+    }
+}

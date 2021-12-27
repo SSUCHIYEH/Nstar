@@ -4,6 +4,7 @@ import ShipDetailModal from "../component/ShipDetailModal";
 import AddCredit from "../component/AddCredit";
 import { useState } from "react";
 import React from "react";
+import { Link } from 'react-router-dom';
 
 
 function UserCheckout() {
@@ -105,8 +106,9 @@ function UserCheckout() {
         </div>
       </div>
       <div className="display_center_end">
+      <Link to={"/usercart/usercheckoutsuccess"}>
         <button className="userCheckout_payBtn font_24 mt_24">結帳</button>
-
+        </Link>
       </div>
 
     </div>
