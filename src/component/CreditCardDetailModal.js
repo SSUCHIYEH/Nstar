@@ -25,7 +25,7 @@ function CreditCardDetailModal(props) {
             <p><input className="input mt_36 " type="text" name="" placeholder="CVV" required /></p>
             <div className="display_center_end mt_36">
                <button onClick={changeCreditShow} id="closeCreditModalBtn" className="btn_unSelected">取消</button>
-               <div className="pl_24"><button onClick={changeCreditShow} id="" className="btn_selected">確認</button></div>
+               <div className="pl_24"><input type="submit" onClick={changeCreditShow} id="" className="btn_selected" value="確認"/></div>
                
             </div>
 

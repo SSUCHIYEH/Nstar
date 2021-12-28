@@ -6,6 +6,7 @@ import LogIn from '../page/LogIn';
 import SignUp from '../page/SignUp';
 import UserCheckout from '../page/UserCheckout';
 import UserCheckoutSuccess from '../page/UserCheckoutSuccess';
+import UserProductShop from '../page/UserProductsShop';
 
 const routes = [
     {
@@ -47,6 +48,11 @@ const routes = [
     {
         path:'/login',
         component: LogIn,
+        exact: true,
+    },
+    {
+        path:'/userproductshop',
+        component: UserProductShop,
         exact: true,
     },
 ]

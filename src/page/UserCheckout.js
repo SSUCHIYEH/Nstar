@@ -1,7 +1,6 @@
 import img_userIcon from "../assests/Icon/account.png";
 import CreditCardDetailModal from "../component/CreditCardDetailModal";
 import ShipDetailModal from "../component/ShipDetailModal";
-import AddCredit from "../component/AddCredit";
 import { useState } from "react";
 import React from "react";
 import { Link } from 'react-router-dom';
@@ -95,7 +94,15 @@ function UserCheckout() {
           </div>
 
         </div>
-        {byremit ? "" : <AddCredit name={creditName} number={creditNumber} creditShow={() => setCreditModalShow(true)} />}
+        { byremit ? 
+           ""
+          : 
+          <div>
+           <div className="line mt_36"></div>
+           <button  onClick={() => setCreditModalShow(true)} id="creditModalBtn" className="btn_unSelected mt_36">編輯信用卡資訊</button>
+           <p className="font_gray mt_36">{creditName}{creditNumber}</p>
+           </div> 
+        }
       </div>
 
       <div className="display_center_end">

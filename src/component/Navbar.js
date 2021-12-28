@@ -95,7 +95,7 @@ export default function NavBar() {
                             <li className="li nav_list_item">
                                 <a href="/"><img alt="" className="navlist-icon" src={account_icon} /></a>
                                 <ul className="ul dropdownlist">
-                                    <li className="li dropdownlist_item"><NavItem to="/" >我的商店</NavItem></li>
+                                    <li className="li dropdownlist_item"><NavItem to="/userproductshop" >我的商店</NavItem></li>
                                     <li className="li dropdownlist_item"><NavItem to="/" >查看購買紀錄</NavItem></li>
                                     <li className="li dropdownlist_item"><NavItem to="/" >我的收藏</NavItem></li>
                                     <li className="li dropdownlist_item"><NavItem to="/" >帳號設定</NavItem></li>
