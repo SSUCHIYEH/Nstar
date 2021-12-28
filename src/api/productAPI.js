@@ -12,3 +12,16 @@ export const getProductByCategory= async (_category)=>{
         console.log(err);
     }
 }
+
+export const getProductById = async (_product_id) => {
+    try{
+        const _url = `${baseURL}/api/v1/products/id/${_product_id}`;
+        const resp = await axios.get(_url);
+        return {
+            status: resp.status,
+            product: resp.data
+        }
+    }catch (e){
+        return { status:e.response.status, detail: e.response.data.detail };
+    }
+}

@@ -19,7 +19,7 @@ const routes = [
         exact: true,
     },
     {
-        path:'/product/detail/:category/:id',
+        path:'/product/detail/:category/:product_id',
         component: ProductDetail,
         exact: true,
 
