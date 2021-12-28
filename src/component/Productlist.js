@@ -2,7 +2,6 @@ import ProductItem from "./ProductItem";
 import { Col,Row } from "antd";
 
 export default function Productlist({ products, text }) {
-    console.log(products)
     return (
         <div className="container">
             <div className="productlist">

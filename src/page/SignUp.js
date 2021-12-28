@@ -38,9 +38,9 @@ function SignuUp() {
             <p className="font_20 mt_32">電子郵件</p>
             <p><input className="input mt_8" {...register("email", { required: true })} placeholder="輸入您的電子郵件" required /></p>
             <p className="font_20 mt_32">密碼</p>
-            <p><input className="input mt_8" {...register("password", { required: true })} placeholder="輸入您的密碼" required /></p>
+            <p><input className="input mt_8" {...register("password", { required: true })} type="password" placeholder="輸入您的密碼" required /></p>
             <p className="font_20 mt_32">確認密碼</p>
-            <p><input className="input mt_8" {...register("comfirm_password", { required: true })} placeholder="輸入您的密碼" required /></p>
+            <p><input className="input mt_8" {...register("comfirm_password", { required: true })} type="password" placeholder="輸入您的密碼" required /></p>
             <input className="btn_selected mt_32" type="submit" value="註冊"/>
             <div className="display_flex mt_8">
             <p className="font_gray">已經有帳號？</p>

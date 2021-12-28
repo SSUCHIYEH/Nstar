@@ -78,7 +78,7 @@ body {
           box-sizing: border-box;
   margin: auto;
   width: 100%;
-  max-width: 1280px;
+  max-width: 1104px;
 }
 
 .container-fluid {
@@ -269,167 +269,6 @@ img.star-img {
 }
 
 /*-------------------- productdetail end --------------------*/
-/*-------------------- cartlist start --------------------*/
-/* .cartlist_container{
-  } */
-.addCart-button {
-  background-color: #000000;
-  color: #fff;
-  width: 280px;
-  padding: 13px 0;
-  margin: 25px 0px;
-}
-
-.cartlist_title {
-  max-width: 1280px;
-  margin: 0px auto;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  height: 74px;
-  border: 1px solid black;
-  font-size: 20px;
-  padding-top: 17px;
-}
-
-.cartlist_title_item {
-  width: 50%;
-  padding-left: 20%;
-  /* background-color: #61dafb; */
-}
-
-.cartlist_title_price {
-  width: 30%;
-  padding-left: 20%;
-  /* background-color: paleturquoise; */
-}
-
-.cartlist_title_delete {
-  width: 20%;
-  padding-left: 10%;
-}
-
-.cartlist_content {
-  /* margin: 92px; */
-  max-width: 1280px;
-  margin: 0px auto;
-  margin-top: 20px;
-  height: 100px;
-  /* background-color: antiquewhite; */
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  font-size: 24px;
-  padding-top: 35px;
-  border: 1px solid black;
-}
-
-.ant-checkbox-checked .ant-checkbox-inner {
-  background-color: black;
-  border-color: black;
-}
-
-.cartlist_content_checkbox {
-  width: 10%;
-  /* background-color: #61dafb; */
-  padding-left: 5%;
-}
-
-.cartlist_content_img {
-  width: 10%;
-  height: -webkit-min-content;
-  height: -moz-min-content;
-  height: min-content;
-  /* background-color: #FFE931; */
-  padding-left: 5%;
-}
-
-.cartlist_content_img_ {
-  width: 60px;
-  height: 60px;
-  margin-top: -10px;
-}
-
-.cartlist_content_item {
-  /* background-color: palegreen; */
-  width: 30%;
-  padding-left: 5%;
-}
-
-.cartlist_content_price {
-  width: 30%;
-  /* background-color: paleturquoise; */
-  padding-left: 20%;
-}
-
-.cartlist_content_delete {
-  width: 10%;
-  padding-left: 10%;
-}
-
-.cartlist_content_delete_icon {
-  width: 24px;
-  height: 24px;
-}
-
-.cartlist_totle {
-  width: 100%;
-  margin: 0px auto;
-  max-width: 1280px;
-  margin-top: 92px;
-  height: 100px;
-  /* background-color:aquamarine; */
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.cartlist_totle_n {
-  width: 60%;
-}
-
-.cartlist_totlebox {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  width: 40%;
-  /* background-color: aliceblue; */
-}
-
-.cartlist_totlebox_detail {
-  width: 50%;
-  /* background-color: aliceblue; */
-  /* text-align: end; */
-  padding-right: 10px;
-}
-
-.cartlist_totlebox_detail_text {
-  font-size: 20px;
-}
-
-.cartlist_totlebox_detail_price {
-  font-size: 24px;
-  font-weight: bold;
-}
-
-.cartlist_totlebox_btn {
-  width: 50%;
-  /* background-color: #FFE931; */
-}
-
-.cartlist_totlebox_btn_ {
-  font-size: 20px;
-  height: 62px;
-}
-
-.cart-noitem {
-  margin: 0px auto;
-  width: 100%;
-  max-width: 1280px;
-  margin-top: 100px;
-}
-
-/*-------------------- cartlist end --------------------*/
 /*---------------------navbar-------------------*/
 .Header {
   width: 100%;
@@ -1403,4 +1242,171 @@ img.star-img {
     min-width: 343px;
   }
 }
+
+/*-------------------- cartlist start --------------------*/
+/* .cartlist_container{
+  } */
+.ant-checkbox-checked .ant-checkbox-inner {
+  background-color: black;
+  border-color: black;
+}
+
+.addCart-button {
+  background-color: #000000;
+  color: #fff;
+  width: 280px;
+  padding: 13px 0;
+  margin: 25px 0px;
+}
+
+.cartlist {
+  padding-top: 140px;
+}
+
+.cartlist_header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 74px;
+  border: 1px solid black;
+  font-size: 20px;
+  padding-left: 48px;
+}
+
+.cartlist_header .cartlist_header_item:nth-child(1) {
+  width: 50%;
+}
+
+.cartlist_header .cartlist_header_item:nth-child(2) {
+  width: 20%;
+}
+
+.cartlist_checkbox {
+  margin-right: 50px;
+}
+
+.cartlist_sellerItem {
+  width: 100%;
+  border: 1px solid #2F2F2F;
+  padding: 0 48px;
+  margin-top: 48px;
+}
+
+.cartlist_sellerItem .cartlist_sellerItem_header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.cartlist_productItem {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.cartlist_productItem_col {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 50%;
+}
+
+.cartlist_productItem_col .cartlist_productItem_item {
+  margin-left: 48px;
+}
+
+.cartlist_productItem_img {
+  width: 90px;
+  height: 90px;
+}
+
+.cartlist_productItem_img img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.cartlist_productItem_item {
+  font-size: 24px;
+  height: 24px;
+}
+
+.cartlist_productItem_icon {
+  width: 32px;
+  height: 32px;
+}
+
+.cartlist_productItem_icon img {
+  width: 100%;
+  height: 100%;
+}
+
+.cartlist_totle {
+  width: 100%;
+  margin: 0px auto;
+  max-width: 1280px;
+  margin-top: 92px;
+  height: 100px;
+  /* background-color:aquamarine; */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.cartlist_totle_n {
+  width: 60%;
+}
+
+.cartlist_totlebox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 40%;
+  /* background-color: aliceblue; */
+}
+
+.cartlist_totlebox_detail {
+  width: 50%;
+  /* background-color: aliceblue; */
+  /* text-align: end; */
+  padding-right: 10px;
+}
+
+.cartlist_totlebox_detail_text {
+  font-size: 20px;
+}
+
+.cartlist_totlebox_detail_price {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.cartlist_totlebox_btn {
+  width: 50%;
+  /* background-color: #FFE931; */
+}
+
+.cartlist_totlebox_btn_ {
+  font-size: 20px;
+  height: 62px;
+}
+
+.cart-noitem {
+  margin: 0px auto;
+  width: 100%;
+  max-width: 1280px;
+  margin-top: 100px;
+}
+
+/*-------------------- cartlist end --------------------*/
 /*# sourceMappingURL=all.css.map */

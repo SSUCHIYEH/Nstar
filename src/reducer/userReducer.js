@@ -7,13 +7,6 @@ import {
     USER_FAIL_REGISTER
 } from '../const/constants';
 
-
-const intialstate ={
-    userInfo:null,
-    remenber: true,
-    error:''
-};
-
 export const userSignInReducer = ( state = {
     userInfo:null,
     remenber: true,
