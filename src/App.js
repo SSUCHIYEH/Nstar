@@ -17,6 +17,7 @@ function App() {
       <BrowserRouter>
         <Navbar />
         {renderRoutes(routes)}
+        <UserCheckout/>
         <Footer />
 
         

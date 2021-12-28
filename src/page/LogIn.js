@@ -29,7 +29,7 @@ function LogIn() {
       if(userInfo) history.push("/");
    }, [userInfo])
    return (
-
+      
       <div className="login_container">
          <div className="login_image">
             <img alt="" className="login_image_img" src={img_login} />
