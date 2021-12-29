@@ -2,25 +2,17 @@
 import { useEffect, useContext } from "react";
 import { addCatItem } from "../actions";
 import { StoreContext } from "../store";
+import { addToCart } from "../actions/productAction";
+import { useDispatch } from "react-redux";
 
-
-
-export default function AddToCart () {
-    
-    const {state :{cartItem, productDetail: {product}},dispatch} = useContext(StoreContext);
-
-    
-    const addToCart = () => {
-        console.log('click')
-        addCatItem(dispatch, product)
+export default function AddToCart (product) {
+    const dispatch = useDispatch();
+    const handleAddToCart = () => {
+        dispatch(addToCart(product));
     }
 
-    useEffect(()=>{
-        localStorage.setItem("cartItem", JSON.stringify(cartItem));
-    }, [cartItem])
-
     return(
-        <button className="addCart-button" onClick={addToCart} >
+        <button className="addCart-button" onClick={handleAddToCart} >
             <span>加入購物車</span>
         </button>
     )

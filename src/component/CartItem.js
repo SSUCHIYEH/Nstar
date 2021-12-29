@@ -1,23 +1,31 @@
 
 import { Checkbox } from 'antd';
-import deleteicon from '../assests//Icon/delete.png';
+import { useEffect, useState } from 'react';
+import deleteicon from '../assests/Icon/delete.png';
 
-function onChange(e) {
-    console.log(`checked = ${e.target.checked}`);
-}
 
-function CartItem({ item }) {
+function CartItem({ item, checkAll }) {
+     const [check, setCheck] = useState(true);
+     useEffect(() => {
+        console.log(checkAll);
+        if(checkAll) {setCheck(true)}
+        else {setCheck(false);}
+     }, [checkAll])
+    function onChange(e) {
+        setCheck(!check);
+    }
     return (
-        <div className="cartlist_content">
-            <Checkbox onChange={onChange} className="cartlist_content_checkbox"></Checkbox>
-            <div className="cartlist_content_img">
-                <img className="cartlist_content_img_" alt="" src={item.imgUrl_1} />
+        <div className="cartlist_productItem">
+            <Checkbox checked={check} type='checkbox' onChange={onChange} className="cartlist_checkbox"/>
+            <div className='cartlist_productItem_col'>
+                <div className="cartlist_productItem_img">
+                    <img alt="" src={item.image} />
+                </div>
+                <span className="cartlist_productItem_item">{item.name}</span>
             </div>
-
-            <div className="cartlist_content_item">{item.name}</div>
-            <div className="cartlist_content_price">NT{item.price}</div>
-            <div className="cartlist_content_delete">
-                <img className="cartlist_content_delete_icon" alt="" src={deleteicon} />
+            <span className="cartlist_productItem_item">NT{item.price}</span>
+            <div className="cartlist_productItem_icon">
+                <img alt="" src={deleteicon} />
             </div>
         </div>
 
