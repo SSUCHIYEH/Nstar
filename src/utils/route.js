@@ -7,6 +7,7 @@ import SignUp from '../page/SignUp';
 import UserCheckout from '../page/UserCheckout';
 import UserCheckoutSuccess from '../page/UserCheckoutSuccess';
 import UserProductShop from '../page/UserProductsShop';
+import UserOrderQuery from '../page/UserOrderQuery';
 
 const routes = [
     {
@@ -53,6 +54,11 @@ const routes = [
     {
         path:'/userproductshop',
         component: UserProductShop,
+        exact: true,
+    },
+    {
+        path:'/userorderquery',
+        component: UserOrderQuery,
         exact: true,
     },
 ]

@@ -31,6 +31,26 @@
     width: 64px;
     height: 64px;
 }
+.img_80 {
+    width: 80px;
+    height: 80px;
+    @include sm{
+        width: 56px;
+        height: 56px;
+    }
+}
+.img_480 {
+    width: 480px;
+    height: 480px;
+    @include md{
+        width: 320px;
+        height: 320px;
+    }
+    @include sm{
+        width: 375px;
+        height: 375px;
+    }
+}
 
 /*--------字體大小---------*/
 .font_20 {
@@ -41,6 +61,9 @@
 }
 .font_36 {
     font-size: 36px;
+    @include sm{
+        font-size: 24px;
+    }
 }
 /*--------字體顏色---------*/
 .font_gray {
@@ -90,8 +113,27 @@
 .w_300 {
     width: 300px;
 }
+.w_240 {
+    width: 240px;
+}
+.w_268{
+    width: 268px;
+}
+.w_full{
+    width: 100%;
+
+}
 
 /*--------margin---------*/
+.m_0{
+    margin: 0;;
+}
+.mt_80 {
+    margin-top: 80px;
+}
+.mt_72 {
+    margin-top: 72px;
+}
 .mt_48 {
     margin-top: 48px;
 }
@@ -117,7 +159,19 @@
 .mb_24 {
     margin-bottom: 24px;
 }
+.mb_16{
+    margin-bottom: 16px;
+}
 
+.ml_88{
+    margin-left: 88px;
+}
+.ml_24{
+    margin-left: 24px;
+}
+.ml_16{
+    margin-left: 16px;
+}
 /*--------padding---------*/
 .pl_48 {
     padding-left: 48px;
@@ -127,4 +181,8 @@
 }
 .pl_16 {
     padding-left: 16px;
+}
+/*--------float---------*/
+.float_r{
+    float: right;
 }

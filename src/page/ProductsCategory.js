@@ -1,5 +1,5 @@
 import { useContext, useEffect,useState } from "react";
-import { useParams } from "react-router-dom"
+import { useParams } from "react-router-dom";
 import { getProductByCategory } from "../api/productAPI.js";
 import Productlist from "../component/Productlist.js";
 import { StoreContext } from "../store/index.js";

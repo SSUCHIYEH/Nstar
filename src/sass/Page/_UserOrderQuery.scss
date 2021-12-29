@@ -1,0 +1,56 @@
+@import "../mixin";
+.UserOrderQuery_container {
+    @include containerBorder;
+    margin-top: $padding_top;
+    padding:48px 144px;
+    @include md{
+        padding:48px;
+    }
+    @include sm{
+        padding:48px 16px;
+    }
+}
+.UserOrderQuery_title {
+    width: 120px;
+    border-bottom: 1px solid $main_black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.UserOrderQuery_tabOn {
+    background-color: white;
+    color: $main_black;
+    width: 88px;
+    border: 0;
+    border-bottom: 1px solid $main_black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 16px;
+    &:hover {
+        color: $main_yellow;
+        border-bottom: 1px solid $main_yellow;
+    }
+}
+.UserOrderQuery_tabOff {
+    background-color: white;
+    color: $gray-400;
+    width: 88px;
+    border: 0;
+    border-bottom: 1px solid $gray-400;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    &:hover {
+        color: $main_yellow;
+        border-bottom: 1px solid $main_yellow;
+    }
+}
+.UserOrderQuery_item {
+    border: 1px solid $main_black;
+    padding:24px 48px;
+    @include sm{
+        padding:16px;
+
+    }
+}

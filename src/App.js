@@ -10,7 +10,8 @@ import {routes} from './utils/route';
 import { renderRoutes } from 'react-router-config';
 import Footer from './component/Footer.js'
 import Navbar from './component/Navbar';
-import UserCheckout from './page/UserCheckout.js'
+import UserCheckout from './page/UserCheckout.js';
+import UserProductDetail from "./page/UserProductDetail";
 
 function App() {
   return (

@@ -1,0 +1,45 @@
+@import "../mixin";
+
+.UserProductShop_container {
+    @include containerBorder;
+    margin-top: $padding_top;
+    display: flex;
+    .UserProductShop_container_userDetail {
+        min-width:1024px;
+        margin:  80px auto;
+        @include lg{
+            min-width:768px;
+        }
+        @include md{
+            min-width:500px;
+        }
+        @include sm{
+            min-width:311px;
+        }
+
+    }
+}
+.UserProductShop_userDetail_top{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    @include md{
+        flex-direction: column;
+        align-items:flex-start;
+    }
+
+}
+.UserProductShop_user{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+}
+.UserProductShop_btnBar{
+    display: flex;
+    @include md{
+       margin-top: 24px;
+    }
+
+}
