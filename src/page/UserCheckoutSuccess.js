@@ -2,7 +2,28 @@ import img_backIcon from "../assests/Icon/Forward_left.png";
 import img_doneIcon from "../assests/Icon/Done.png";
 import img_userIcon from "../assests/Icon/account.png";
 import { Link } from 'react-router-dom';
+import { useDispatch, useSelector } from "react-redux";
+import { useEffect } from "react";
+import { removeProductFromOrder } from "../actions/productAction";
+import { deleteProduct } from "../api/productAPI";
 function UserCheckoutSuccess() {
+   const { orderDtail, orderProduct } = useSelector(state => state.product)
+   const dispatch = useDispatch();
+
+   async function _handledeleteProduct() {
+      for (let i in orderProduct) {
+         const resp = await deleteProduct(orderProduct[i].id);
+         console.log(resp);
+      }
+   }
+
+   useEffect(() => {
+      console.log(orderDtail);
+   }, [orderDtail])
+   useEffect(() => {
+      _handledeleteProduct();
+      dispatch(removeProductFromOrder());
+   }, [])
    return (
 
       <div className="UserCheckoutSuccess_container">

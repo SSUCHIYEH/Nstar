@@ -4,8 +4,10 @@ import CartItem from "../component/CartItem";
 import { useDispatch, useSelector } from "react-redux";
 import { Checkbox } from 'antd';
 import { addProductToOrder, removeProductFromOrder } from '../actions/productAction';
+import { useHistory } from "react-router-dom";
 
 export default function UserCart() {
+    const history = useHistory();
     let [checkAll, setCheckAll] = useState(null);
     const dispatch = useDispatch();
     const [count, setCount] = useState(0);
@@ -29,6 +31,12 @@ export default function UserCart() {
             dispatch(removeProductFromOrder())
         }
         setCheckAll(storeCheck);
+    }
+
+    function handleCreateOrder() {
+        if(orderProduct){
+            history.push('/usercart/usercheckout');
+        }
     }
 
     // 計算訂單內商品的總價與數量
@@ -92,7 +100,7 @@ export default function UserCart() {
                             <div className="cartlist_totlebox_detail_price">NT {price}</div>
                         </div>
                         <div className="cartlist_totlebox_btn">
-                            <Button type="primary" className="cartlist_totlebox_btn_"
+                            <Button onClick={handleCreateOrder} type="primary" className="cartlist_totlebox_btn_"
                                 style={{ backgroundColor: 'black', borderColor: 'black' }}>
                                 去買單
                             </Button>
@@ -112,14 +120,3 @@ export default function UserCart() {
         )
     }
 }
-
-
-// {
-//     checkAll[seller] ?
-//         < CartItem key={productItem.id} checkAll={true} item={productItem} />
-//         : < CartItem key={productItem.id} checkAll={false} item={productItem} />
-// }
-
-
-{/* < CartItem key={productItem.id} checkAll={true} item={productItem} />
-: < CartItem key={productItem.id} checkAll={false} item={productItem} /> */}

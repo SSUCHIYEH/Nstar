@@ -20,6 +20,7 @@ const initialState = {
         : null,
         product:null,
         orderProduct:null,
+        orderDtail:null,
     }
     
 }
