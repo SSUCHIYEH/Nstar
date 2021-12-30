@@ -25,3 +25,16 @@ export const getProductById = async (_product_id) => {
         return { status:e.response.status, detail: e.response.data.detail };
     }
 }
+
+export const deleteProduct = async (_product_id) => {
+    try{
+        const url = `${baseURL}/api/v1/products/delete/${_product_id}`;
+        const resp = await axios.get(url);
+        return {
+            status: resp.status,
+            detail: resp.data
+        }
+    }catch(e) {
+        return { status:e.response.status, detail: e.response.data.detail };
+    }
+}

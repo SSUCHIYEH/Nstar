@@ -8,7 +8,6 @@ import {
 } from '../const/constants';
 import { useDispatch } from "react-redux";
 import { registerWithEmailPassword, signInWithEmailPassword } from '../api/userAPI.js';
-import { unstable_renderSubtreeIntoContainer } from 'react-dom';
 
 export const login = (userInfo) => async (dispatch) => {
     try {
@@ -40,6 +39,7 @@ export const login = (userInfo) => async (dispatch) => {
 export const logout = () => async (dispatch) => {
     dispatch({ type: USER_LOGOUT });
     localStorage.removeItem("userInfo");
+    localStorage.removeItem("cartItems");
 }
 
 export const signUpRegister = (userInfo) => async (dispatch) => {

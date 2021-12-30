@@ -1,18 +1,21 @@
 import img_userIcon from "../assests/Icon/account.png";
 import CreditCardDetailModal from "../component/CreditCardDetailModal";
 import ShipDetailModal from "../component/ShipDetailModal";
-import { useState } from "react";
+import { useState,useEffect } from "react";
 import React from "react";
-import { Link } from 'react-router-dom';
-
+import { Link,useHistory } from 'react-router-dom';
+import { useSelector,useDispatch } from "react-redux";
+import { createOrder } from "../actions/productAction";
 
 function UserCheckout() {
-
-
+  const dispatch = useDispatch();
+  const history = useHistory();
+  const { orderProduct, orderDtail } = useSelector(state => {
+    console.log(state);
+    return state.product})
+  const { userInfo } = useSelector(state=>state.userSignIn);
   const [byremit, setbyRemit] = useState(false);
-  const handlePaymentClick = (value = !byremit) => {
-    setbyRemit(value);
-  }
+
 
   const [shipModalShow, setShipModalShow] = useState(false);
   const [creditModalShow, setCreditModalShow] = useState(false);
@@ -26,9 +29,56 @@ function UserCheckout() {
   const [creditName, setCreditName] = useState("尚未填寫信用卡資訊");
   const [creditNumber, setCreditNumber] = useState("");
 
+  const handlePaymentClick = (value = !byremit) => {
+    setbyRemit(value);
+  }
+  
+  function TotalPrice() {
+    return orderProduct.reduce((sum, item) => sum + item.price, 0)
+  }
 
 
+  async function handlePayTheCheck() {
+    const product_item = createProductItems();
+    const totalPrice = TotalPrice() + 60;
+    const payment = byremit? "信用卡付款":"銀行轉帳";
+    const order = {
+      "id": "string",
+      "finish": false,
+      "payment":  payment,
+      "address": `${shipName} ${shipPhone} ${shipAddress}`,
+      "totalprice": totalPrice,
+      "user_sell_id": orderProduct[0].owner.id,
+      "user_buy_id": userInfo.user_id,
+      "product_items": product_item
+    }
+    await dispatch(createOrder(order,userInfo.user_id,orderProduct));
+  }
 
+  function createProductItems() {
+    let data = [];
+    orderProduct.forEach(item => {
+      const product = {
+        "category": item.category,
+        "name": item.name,
+        "size": item.size,
+        "color": item.color,
+        "tag": item.tag,
+        "price": 0,
+        "image": item.image,
+        "description": item.description
+      }
+      data.push(product);
+    });
+    return data;
+  }
+
+  useEffect(() => {
+    console.log(orderDtail);
+    if(orderDtail){
+      history.push('/usercart/usercheckoutsuccess')
+    }
+  }, [orderDtail])
 
 
 
@@ -54,18 +104,23 @@ function UserCheckout() {
       <div className="userCheckout_order">
         <div className="display_center mb_36">
           <img alt="" className="img_36" src={img_userIcon} />
-          <p className="pl_16">abc1234</p>
+          <p className="pl_16">Becca</p>
         </div>
         <div className="line mb_36"></div>
 
         {/* map */}
-        <div className="display_center_between mb_36">
-          <div className="display_center">
-            <img alt="" className="img_64" src={img_userIcon} />
-            <p className="pl_16">素色大學T</p>
-          </div>
-          <p>NT130</p>
-        </div>
+        {
+          orderProduct.map((item) => (
+            <div className="display_center_between mb_36">
+              <div className="display_center">
+                <img alt="" className="img_64" src={item.image} />
+                <p className="pl_16">{item.name}</p>
+              </div>
+              <p>{item.price}</p>
+            </div>
+          ))
+        }
+
         {/* map */}
 
         <div className="line mb_36"></div>
@@ -94,28 +149,28 @@ function UserCheckout() {
           </div>
 
         </div>
-        { byremit ? 
-           ""
-          : 
+        {byremit ?
+          ""
+          :
           <div>
-           <div className="line mt_36"></div>
-           <button  onClick={() => setCreditModalShow(true)} id="creditModalBtn" className="btn_unSelected mt_36">編輯信用卡資訊</button>
-           <p className="font_gray mt_36">{creditName}{creditNumber}</p>
-           </div> 
+            <div className="line mt_36"></div>
+            <button onClick={() => setCreditModalShow(true)} id="creditModalBtn" className="btn_unSelected mt_36">編輯信用卡資訊</button>
+            <p className="font_gray mt_36">{creditName}{creditNumber}</p>
+          </div>
         }
       </div>
 
       <div className="display_center_end">
         <div className="display_flex mt_24">
-          <p className="font_20">訂單金額:(共2件商品含運費):</p>
-          <p className="font_36">360</p>
+          <p className="font_20">訂單金額:(共{orderProduct.length}件商品含運費):</p>
+          <p className="font_36">{TotalPrice() + 60}</p>
 
         </div>
       </div>
       <div className="display_center_end">
-      <Link to={"/usercart/usercheckoutsuccess"}>
-        <button className="userCheckout_payBtn font_24 mt_24">結帳</button>
-        </Link>
+        <a onClick={handlePayTheCheck}>
+          <button className="userCheckout_payBtn font_24 mt_24">結帳</button>
+        </a>
       </div>
 
     </div>
@@ -123,3 +178,7 @@ function UserCheckout() {
 }
 
 export default UserCheckout;
+
+{/* <Link to={"/usercart/usercheckoutsuccess"}>
+  <button className="userCheckout_payBtn font_24 mt_24">結帳</button>
+</Link> */}

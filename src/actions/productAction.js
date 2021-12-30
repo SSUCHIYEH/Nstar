@@ -1,10 +1,12 @@
 import reactRouterConfig from 'react-router-config';
-import { getProductById } from '../api/productAPI';
+import { deleteProduct, getProductById } from '../api/productAPI';
+import { portBuyOrder } from '../api/userAPI';
 import {
     SET_PAGE_CONTENT,
     ADD_CART_ITEM,
     ADD_TO_ORDER,
     REMOVE_FROM_ORDER,
+    ORDER_CREATE_SUCCESS
 } from '../const/constants';
 
 export const setProductDetail = (product) => async (dispatch) => {
@@ -41,13 +43,13 @@ export const addToCart = (product) => {
         let cartData = JSON.parse((localStorage.getItem("cartItems")));
         if (cartData[`${username}`]) {
             const findCart = cartData[`${username}`].find((el) => el.id === product.id);
-            if(!findCart) {
+            if (!findCart) {
                 cartData[`${username}`].push(product);
                 localStorage.setItem("cartItems", JSON.stringify(cartData));
             }
         } else {
             data.push(product)
-;           cartData[`${username}`] = data;
+                ; cartData[`${username}`] = data;
             localStorage.setItem("cartItems", JSON.stringify(cartData));
         }
     }
@@ -56,14 +58,48 @@ export const addToCart = (product) => {
 }
 
 export const addProductToOrder = (orderProduct) => {
-    return{
-        type:ADD_TO_ORDER,
+    return {
+        type: ADD_TO_ORDER,
         payload: orderProduct,
     }
 }
 export const removeProductFromOrder = () => {
-    return{
-        type:REMOVE_FROM_ORDER,
-        payload:null,
+    return {
+        type: REMOVE_FROM_ORDER,
+        payload: null,
+    }
+}
+
+export const createOrder = (order, user_id, orderProduct) => async (dispatch) => {
+    try {
+        const resp = await portBuyOrder(order, user_id);
+        if (resp.status === 200) {
+            dispatch({
+                type: ORDER_CREATE_SUCCESS,
+                payload: resp.order
+            })
+            console.log(orderProduct);
+            return resp.order
+
+
+            // if(err !== null){
+            //     dispatch({
+            //         type:ORDER_CREATE_SUCCESS,
+            //         payload:resp.order
+            //     })
+            //     return resp.order
+            // }else{
+            //     return err;
+            // }
+            // dispatch({
+            //     type: ORDER_CREATE_SUCCESS,
+            //     payload: resp.order
+            // })
+            console.log(resp);
+
+        }
+    } catch (e) {
+        console.log(e);
+        return null;
     }
 }
