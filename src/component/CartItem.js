@@ -15,7 +15,7 @@ function CartItem({ item, checkAll }) {
         setCheck(!check);
     }
     return (
-        <div className="cartlist_productItem">
+        <div className="cartlist_productItem mt_24">
             <Checkbox checked={check} type='checkbox' onChange={onChange} className="cartlist_checkbox"/>
             <div className='cartlist_productItem_col'>
                 <div className="cartlist_productItem_img">
@@ -25,7 +25,7 @@ function CartItem({ item, checkAll }) {
             </div>
             <span className="cartlist_productItem_item">NT{item.price}</span>
             <div className="cartlist_productItem_icon">
-                <img alt="" src={deleteicon} />
+                <img alt="" className="img_26" src={deleteicon} />
             </div>
         </div>
 

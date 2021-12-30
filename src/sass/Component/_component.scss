@@ -121,7 +121,6 @@
 }
 .w_full{
     width: 100%;
-
 }
 
 /*--------margin---------*/
@@ -183,6 +182,31 @@
     padding-left: 16px;
 }
 /*--------float---------*/
-.float_r{
-    float: right;
+.select{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image:
+    linear-gradient(45deg, transparent 50%, $main_black 50%),
+    linear-gradient(135deg, $main_black 50%, transparent 50%);
+   // linear-gradient(to right, #ccc, #ccc);
+    background-position:
+    calc(100% - 20px) calc(1em + 2px),
+    calc(100% - 15px) calc(1em + 2px),
+    calc(100% - 2.5em) 0.5em;
+    background-size:
+    5px 5px,
+    5px 5px,
+    1px 1.5em;
+    background-repeat: no-repeat;
+
+
+
+    height: 40px;
+    width:126px;
+    border: 1px solid $main_black;
+    border-radius: 0;
+    padding:0 8px;
+    &:focus{
+        outline: 0;
+    }
 }

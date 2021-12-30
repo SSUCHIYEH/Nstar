@@ -23,12 +23,12 @@
     height: 74px;
     border: 1px solid black;
     font-size: 20px;
-    padding-left: 48px;
+    padding-left: 144px;
     .cartlist_header_item:nth-child(1) {
         width: 50%;
     }
     .cartlist_header_item:nth-child(2) {
-        width: 20%;
+        width: 25%;
     }
 }
 .cartlist_checkbox{
@@ -37,7 +37,7 @@
 .cartlist_sellerItem {
     width: 100%;
     border: 1px solid $main_black;
-    padding: 0 48px;
+    padding: 36px 48px;
     margin-top: 48px;
     .cartlist_sellerItem_header {
         display: flex;
@@ -68,16 +68,16 @@
     }
 }
 .cartlist_productItem_item {
-    font-size: 24px;
+    font-size: 20px;
     height: 24px;
+   
 }
 .cartlist_productItem_icon{
-    width: 32px;
-    height: 32px;
-    img{
-        width: 100%;
-        height: 100%;
-    };
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 10%;
+    width:20%;
 }
 
 //   .cartlist_productItem {
