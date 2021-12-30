@@ -4,6 +4,7 @@ import CartItem from "../component/CartItem";
 import { useDispatch, useSelector } from "react-redux";
 import { Checkbox } from 'antd';
 import { addProductToOrder, removeProductFromOrder } from '../actions/productAction';
+import img_userIcon from "../assests/Icon/account.png";
 
 export default function UserCart() {
     let [checkAll, setCheckAll] = useState(null);
@@ -65,11 +66,13 @@ export default function UserCart() {
 
                 {Object.keys(cartItems).map(seller => (
                     <div className="cartlist_sellerItem" key={seller}>
-                        <div className="cartlist_sellerItem_header">
+                        <div className="cartlist_sellerItem_header display_center">
                             <Checkbox defaultChecked={false} onChange={clickAllCheck} data={seller} className="cartlist_checkbox" />
-                            <img src={cartItems[seller][0].owner.image} />
-                            <p>{seller}</p>
+                            <img alt="" className="img_36" src={img_userIcon} />
+                            {/* <img src={cartItems[seller][0].owner.image} /> */}
+                            <p className="ml_16">{seller}</p>
                         </div>
+                        <div className="line mt_24"></div>
                         {
                             cartItems[seller].map(productItem => (
                                 <>
@@ -88,7 +91,7 @@ export default function UserCart() {
                     <div className="cartlist_totle_n"></div>
                     <div className="cartlist_totlebox">
                         <div className="cartlist_totlebox_detail">
-                            <div className="cartlist_totlebox_detail_text">總金額：共 {count} 件）</div>
+                            <div className="cartlist_totlebox_detail_text">總金額:(共 {count} 件）</div>
                             <div className="cartlist_totlebox_detail_price">NT {price}</div>
                         </div>
                         <div className="cartlist_totlebox_btn">

@@ -30,7 +30,7 @@ export default function Cart() {
                     <div className="cartlist_totle_n"></div>
                     <div className="cartlist_totlebox">
                         <div className="cartlist_totlebox_detail">
-                            <div className="cartlist_totlebox_detail_text">總金額：（共{cartItems.length}件）</div>
+                            <div className="cartlist_totlebox_detail_text">總金額:（共{cartItems.length}件）</div>
                             <div className="cartlist_totlebox_detail_price">NT{TotalPrice()}</div>
                         </div>
                         <div className="cartlist_totlebox_btn">
