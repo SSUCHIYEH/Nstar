@@ -9,7 +9,7 @@ import account_icon from '../assests/Icon/account.png'
 import cart_icon from '../assests/Icon/shopping-cart-outline.png'
 import { useDispatch, useSelector } from "react-redux";
 import { logout } from "../actions/userAction";
-import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
+import { useHistory } from "react-router-dom/";
 
 
 

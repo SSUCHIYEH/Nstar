@@ -4,14 +4,16 @@ import {
     ADD_TO_ORDER,
     REMOVE_FROM_ORDER,
     ORDER_CREATE_SUCCESS,
-    CLEAN_CART_ITEMS
+    CLEAN_CART_ITEMS,
+    USER_CREATE_PRODUCT,
 } from '../const/constants';
 
 export const productReducer = (state = {
     cartItems: null,
     product: null,
     orderProduct: null,
-    orderDtail: null
+    orderDetail: null,
+    reload:false
 }, action) => {
     switch (action.type) {
         case CLEAN_CART_ITEMS:
@@ -51,9 +53,13 @@ export const productReducer = (state = {
             console.log(action)
             return {
                 ...state,
-                orderDtail: action.payload,
+                orderDetail: action.payload,
             }
-
+        case USER_CREATE_PRODUCT:
+            return{
+                ...state,
+                reload:true,
+            }
         default:
             return state
     }
