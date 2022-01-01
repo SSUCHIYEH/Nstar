@@ -31,24 +31,25 @@
     flex-direction: row;
     align-items: center;
     justify-content:space-between;
-    @include md{
+    @include lg{
       flex-direction: column;
     }
 
   }
   .intro_1_description{
     background-color: #C2C0C2;
-   // width: 100%;
+    width: 100%;
     display: flex;
     flex-direction:column;
     justify-content: end;
     align-items: flex-end;
     padding: 48px;
-  }
-  .intro_1_BG{
-    // width: 50%;
-     background-color: aqua;
-    // background-size: cover;
+    @include md{
+      padding-right: 240px;
+    }
+    @include sm{
+      padding-right: 48px;
+    }
   }
   .intro_1_bg{
     width: 100%;
@@ -64,28 +65,110 @@
   
   /*-------------------- intro_2 start --------------------*/
   .intro_2_container {
-    height: 700px;
+    width: 100%;
+    //height: 700px;
     display: flex;
     border-top: 1px solid $main_black;
     border-bottom: 1px solid $main_black;
+    padding-bottom: 80px;
+    @include md{
+      flex-direction: column;
+
+    }
   }
   .intro_2_img {
-    width: 100%;
+    width: 50%;
     padding-top: 55px;
     padding-left: 84px;
+   
+    @include md{
+      width: 100%;
+      padding: 55px 32px;
+    }
+    @include sm{ 
+      padding: 55px 16px;
+    }
   }
-  .intro_2_describe {
+  .intro_2_img_{
     width: 100%;
+    object-fit: fill;
+  }
+
+  .intro_2_describe {
+    width: 50%;
     padding-top: 229px;
     padding-left: 72px;
+    @include md{
+      width: 100%;
+      padding: 0px 32px;
+    }
+    @include sm{ 
+      padding: 0px 16px;
+    }
   }
   .intro_2_title {
+    width: 400px;
     font-size: 36px;
+    @include md{
+      width: 100%;
+    }
   }
   .intro_2_text {
     margin-top: 50px;
-    width: 385px;
+    width: 400px;
     font-size: 16px;
     line-height: 24px;
+    @include md{
+      width: 400px;
+
+    }
+    @include sm{
+      width:100%;
+
+    }
   }
   /*-------------------- intro_2 end --------------------*/
+
+  /*------------------ star---------------------*/
+.star {
+  max-width: 1280px;
+  width: 100%;
+  padding-bottom: 100px;
+  
+}
+.star-bar {
+  display: flex;
+  margin-top: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @include md{
+    flex-direction: column;
+  }
+}
+.star-item {
+  width: 250px;
+  margin-right: 48px;
+ 
+  @include md{
+    margin-top: 36px;
+  }
+  @include sm{
+    width: 135px;
+  }
+}
+.star-name {
+  margin-top: 10px;
+}
+img.star-img {
+  width: 250px;
+  height: 250px;
+  @include sm{
+    width: 135px;
+    height: 135px;
+  }
+}
+.star-box{
+  display: flex;
+
+}

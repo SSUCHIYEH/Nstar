@@ -136,36 +136,6 @@ body {
   font-size: 20px;
 }
 
-/*------------------ star---------------------*/
-.star {
-  max-width: 1280px;
-  width: 100%;
-  padding-bottom: 100px;
-}
-
-.star-bar {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  margin-top: 32px;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-}
-
-.star-item {
-  width: 250px;
-}
-
-.star-name {
-  margin-top: 10px;
-}
-
-img.star-img {
-  width: 250px;
-  height: 250px;
-}
-
 /*-----------productdetail----------------*/
 .productdetail_container {
   display: -webkit-box;
@@ -601,6 +571,7 @@ img.star-img {
 }
 
 .nav_375 {
+  width: 375px;
   padding: 16px 32px;
   display: none;
 }
@@ -1318,7 +1289,7 @@ img.star-img {
           justify-content: space-between;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .intro_1_box1 {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -1329,6 +1300,7 @@ img.star-img {
 
 .intro_1_description {
   background-color: #C2C0C2;
+  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1345,8 +1317,16 @@ img.star-img {
   padding: 48px;
 }
 
-.intro_1_BG {
-  background-color: aqua;
+@media (max-width: 768px) {
+  .intro_1_description {
+    padding-right: 240px;
+  }
+}
+
+@media (max-width: 375px) {
+  .intro_1_description {
+    padding-right: 48px;
+  }
 }
 
 .intro_1_bg {
@@ -1362,38 +1342,168 @@ img.star-img {
 /*-------------------- intro_1 end --------------------*/
 /*-------------------- intro_2 start --------------------*/
 .intro_2_container {
-  height: 700px;
+  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   border-top: 1px solid #2F2F2F;
   border-bottom: 1px solid #2F2F2F;
+  padding-bottom: 80px;
+}
+
+@media (max-width: 768px) {
+  .intro_2_container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
 }
 
 .intro_2_img {
-  width: 100%;
+  width: 50%;
   padding-top: 55px;
   padding-left: 84px;
 }
 
-.intro_2_describe {
+@media (max-width: 768px) {
+  .intro_2_img {
+    width: 100%;
+    padding: 55px 32px;
+  }
+}
+
+@media (max-width: 375px) {
+  .intro_2_img {
+    padding: 55px 16px;
+  }
+}
+
+.intro_2_img_ {
   width: 100%;
+  -o-object-fit: fill;
+     object-fit: fill;
+}
+
+.intro_2_describe {
+  width: 50%;
   padding-top: 229px;
   padding-left: 72px;
 }
 
+@media (max-width: 768px) {
+  .intro_2_describe {
+    width: 100%;
+    padding: 0px 32px;
+  }
+}
+
+@media (max-width: 375px) {
+  .intro_2_describe {
+    padding: 0px 16px;
+  }
+}
+
 .intro_2_title {
+  width: 400px;
   font-size: 36px;
+}
+
+@media (max-width: 768px) {
+  .intro_2_title {
+    width: 100%;
+  }
 }
 
 .intro_2_text {
   margin-top: 50px;
-  width: 385px;
+  width: 400px;
   font-size: 16px;
   line-height: 24px;
 }
 
+@media (max-width: 768px) {
+  .intro_2_text {
+    width: 400px;
+  }
+}
+
+@media (max-width: 375px) {
+  .intro_2_text {
+    width: 100%;
+  }
+}
+
 /*-------------------- intro_2 end --------------------*/
+/*------------------ star---------------------*/
+.star {
+  max-width: 1280px;
+  width: 100%;
+  padding-bottom: 100px;
+}
+
+.star-bar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 32px;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media (max-width: 768px) {
+  .star-bar {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
+.star-item {
+  width: 250px;
+  margin-right: 48px;
+}
+
+@media (max-width: 768px) {
+  .star-item {
+    margin-top: 36px;
+  }
+}
+
+@media (max-width: 375px) {
+  .star-item {
+    width: 135px;
+  }
+}
+
+.star-name {
+  margin-top: 10px;
+}
+
+img.star-img {
+  width: 250px;
+  height: 250px;
+}
+
+@media (max-width: 375px) {
+  img.star-img {
+    width: 135px;
+    height: 135px;
+  }
+}
+
+.star-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
 .login_container {
   display: -webkit-box;
   display: -ms-flexbox;
