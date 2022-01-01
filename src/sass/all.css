@@ -1415,6 +1415,12 @@ body {
   }
 }
 
+@media (max-width: 375px) {
+  .intro_2_title {
+    font-size: 24px;
+  }
+}
+
 .intro_2_text {
   margin-top: 50px;
   width: 400px;
@@ -2080,6 +2086,19 @@ img.star-img {
   padding-left: 144px;
 }
 
+@media (max-width: 768px) {
+  .cartlist_header {
+    margin: 0 80px;
+  }
+}
+
+@media (max-width: 375px) {
+  .cartlist_header {
+    margin: 0 16px;
+    padding-left: 16px;
+  }
+}
+
 .cartlist_header .cartlist_header_item:nth-child(1) {
   width: 50%;
 }
@@ -2092,11 +2111,30 @@ img.star-img {
   margin-right: 50px;
 }
 
+@media (max-width: 375px) {
+  .cartlist_checkbox {
+    margin-right: 16px;
+  }
+}
+
 .cartlist_sellerItem {
   width: 100%;
   border: 1px solid #2F2F2F;
   padding: 36px 48px;
   margin-top: 48px;
+}
+
+@media (max-width: 768px) {
+  .cartlist_sellerItem {
+    padding: 36px 16px;
+    margin: 48px 80px;
+  }
+}
+
+@media (max-width: 375px) {
+  .cartlist_sellerItem {
+    margin: 48px 16px;
+  }
 }
 
 .cartlist_sellerItem .cartlist_sellerItem_header {
@@ -2124,8 +2162,38 @@ img.star-img {
   width: 50%;
 }
 
+@media (max-width: 375px) {
+  .cartlist_productItem_col {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+}
+
 .cartlist_productItem_col .cartlist_productItem_item {
   margin-left: 48px;
+}
+
+@media (max-width: 768px) {
+  .cartlist_productItem_col .cartlist_productItem_item {
+    margin-left: 16px;
+  }
+}
+
+@media (max-width: 375px) {
+  .cartlist_productItem_col .cartlist_productItem_item {
+    margin-left: 0px;
+  }
+}
+
+@media (max-width: 375px) {
+  .sm_mt_8 {
+    margin-top: 8px;
+  }
 }
 
 .cartlist_productItem_img {
@@ -2159,6 +2227,12 @@ img.star-img {
   width: 20%;
 }
 
+@media (max-width: 768px) {
+  .cartlist_productItem_icon {
+    margin-left: 0;
+  }
+}
+
 .cartlist_totle {
   width: 100%;
   margin: 0px auto;
@@ -2173,6 +2247,12 @@ img.star-img {
 
 .cartlist_totle_n {
   width: 60%;
+}
+
+@media (max-width: 375px) {
+  .cartlist_totle_n {
+    width: 30%;
+  }
 }
 
 .cartlist_totlebox {
@@ -2190,7 +2270,14 @@ img.star-img {
   padding-right: 10px;
 }
 
+@media (max-width: 375px) {
+  .cartlist_totlebox_detail {
+    width: 100%;
+  }
+}
+
 .cartlist_totlebox_detail_text {
+  width: 500px;
   font-size: 20px;
 }
 

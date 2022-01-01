@@ -24,27 +24,47 @@
     border: 1px solid black;
     font-size: 20px;
     padding-left: 144px;
+    @include md{
+      margin: 0 80px;
+    }
+    @include sm{
+      margin: 0 16px;
+      padding-left: 16px;
+    }
     .cartlist_header_item:nth-child(1) {
         width: 50%;
     }
     .cartlist_header_item:nth-child(2) {
         width: 25%;
+    
     }
 }
 .cartlist_checkbox{
     margin-right: 50px;
+    @include sm{
+      margin-right: 16px;
+    }
 }
 .cartlist_sellerItem {
     width: 100%;
     border: 1px solid $main_black;
     padding: 36px 48px;
     margin-top: 48px;
+   // background-color: aqua;
+    @include md{
+      padding: 36px 16px;
+      margin: 48px 80px;
+    }
+    @include sm{
+      margin: 48px 16px;
+    }
     .cartlist_sellerItem_header {
         display: flex;
     }
 }
 
 .cartlist_productItem {
+  
     display: flex;
     align-items: center;
 }
@@ -53,9 +73,27 @@
     display: flex;
     align-items: center;
     width: 50%;
+    @include md{
+      //width: 40%;
+    }
+    @include sm {
+      flex-direction: column;
+      align-items:flex-start;
+    }
     .cartlist_productItem_item {
         margin-left: 48px;
+        @include md{
+          margin-left: 16px;
+        }
+        @include sm{
+          margin-left: 0px;
+        }
     }
+}
+.sm_mt_8{
+  @include sm{
+    margin-top: 8px;
+  }
 }
 
 .cartlist_productItem_img {
@@ -68,6 +106,7 @@
     }
 }
 .cartlist_productItem_item {
+   // background-color: antiquewhite;
     font-size: 20px;
     height: 24px;
    
@@ -78,6 +117,9 @@
     align-items: center;
     margin-left: 10%;
     width:20%;
+    @include md{
+      margin-left: 0;
+    }
 }
 
 //   .cartlist_productItem {
@@ -144,6 +186,10 @@
   }
   .cartlist_totle_n {
     width: 60%;
+    @include sm{
+      width: 30%;
+    }
+
   }
   .cartlist_totlebox {
     display: flex;
@@ -156,8 +202,12 @@
     /* background-color: aliceblue; */
     /* text-align: end; */
     padding-right: 10px;
+    @include sm{
+      width: 100%;
+    }
   }
   .cartlist_totlebox_detail_text {
+    width: 500px;
 
     font-size: 20px;
   }

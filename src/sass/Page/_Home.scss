@@ -112,6 +112,9 @@
     @include md{
       width: 100%;
     }
+    @include sm {
+      font-size: 24px;
+    }
   }
   .intro_2_text {
     margin-top: 50px;
