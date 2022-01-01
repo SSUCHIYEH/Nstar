@@ -148,6 +148,9 @@
   @include md{
     flex-direction: column;
   }
+  @include sm{
+    margin-left: 50px ;
+  }
 }
 .star-item {
   width: 250px;
