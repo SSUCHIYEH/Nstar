@@ -285,7 +285,7 @@ img.star-img {
   width: 100%;
   background: #fff;
   border: 1px solid rgba(0, 0, 0, 0.1);
-  max-width: 1280px;
+  max-width: 1024px;
   margin: 0 auto;
 }
 
@@ -304,6 +304,18 @@ img.star-img {
 .navbar .nav_list:nth-child(2) {
   float: right;
   margin-right: 0px;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    max-width: 628px;
+  }
+}
+
+@media (max-width: 375px) {
+  .navbar {
+    display: none;
+  }
 }
 
 .navbar > .nav_list {
@@ -564,6 +576,39 @@ img.star-img {
       -ms-flex-pack: center;
           justify-content: center;
   bottom: 10px;
+}
+
+/*-----------------------------------*/
+.hamburger {
+  display: none;
+}
+
+@media (max-width: 375px) {
+  .hamburger {
+    display: block;
+    z-index: 3;
+  }
+}
+
+.hamburger_p {
+  background-color: #a88f8f;
+}
+
+@media (max-width: 375px) {
+  .navItem_display {
+    display: none;
+  }
+}
+
+.nav_375 {
+  padding: 16px 32px;
+  display: none;
+}
+
+@media (max-width: 375px) {
+  .nav_375 {
+    display: block;
+  }
 }
 
 .Footer {
@@ -962,6 +1007,11 @@ img.star-img {
   }
 }
 
+.img_logoSmall {
+  width: 91px;
+  height: 38px;
+}
+
 /*--------字體大小---------*/
 .font_20 {
   font-size: 20px;
@@ -981,6 +1031,11 @@ img.star-img {
   }
 }
 
+/*--------字重---------*/
+.font_weight_500 {
+  font-weight: 500;
+}
+
 /*--------字體顏色---------*/
 .font_gray {
   color: #9B9B9B;
@@ -994,8 +1049,16 @@ img.star-img {
   color: #2F2F2F;
 }
 
+.font_white {
+  color: white;
+}
+
 .bg_y {
   background-color: aquamarine;
+}
+
+.font_hover_y:hover {
+  color: #FFE931;
 }
 
 /*--------display---------*/
@@ -1077,8 +1140,21 @@ img.star-img {
   width: 268px;
 }
 
+.w_230 {
+  width: 230px;
+}
+
+.w_180 {
+  width: 180px;
+}
+
 .w_full {
   width: 100%;
+}
+
+/*--------height---------*/
+.h_full {
+  height: 100vh;
 }
 
 /*--------margin---------*/
@@ -1134,6 +1210,14 @@ img.star-img {
   margin-left: 88px;
 }
 
+.ml_48 {
+  margin-left: 48px;
+}
+
+.ml_36 {
+  margin-left: 36px;
+}
+
 .ml_24 {
   margin-left: 24px;
 }
@@ -1156,6 +1240,10 @@ img.star-img {
 }
 
 /*--------float---------*/
+.float_r {
+  float: right;
+}
+
 .select {
   -webkit-appearance: none;
   -moz-appearance: none;
