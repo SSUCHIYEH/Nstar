@@ -13,11 +13,11 @@ function Home({ match }) {
     useEffect(() => {
 
         getProductByCategory("men_top").then((resp) => {
-            if(resp.data){
+            if (resp.data) {
                 console.log(resp);
                 setProductData(resp.data);
             }
-        }).catch((err)=>{
+        }).catch((err) => {
             console.log(err);
         });
     }, [])
@@ -25,31 +25,38 @@ function Home({ match }) {
     return (
         <>
             <IntroOne />
-            {_productData?
-            <Productlist products={_productData} text="或許你會喜歡" />
-            :null}
+            {_productData ?
+                <Productlist products={_productData} text="或許你會喜歡" />
+                : null}
 
 
             <IntroTwo />
             <div className="star productlist-title container">
-                <p className="star-title">熱門帳號</p>
+               <p className="ml_24">熱門帳號</p>
+                
                 <div className="star-bar">
-                    <div className="star-item">
-                        <img alt="" className="star-img" src="https://images.pexels.com/photos/2690323/pexels-photo-2690323.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" />
-                        <p className="star-name">Becca1304</p>
+                    <div className="star-box">
+                        <div className="star-item">
+                            <img alt="" className="star-img" src="https://images.pexels.com/photos/2690323/pexels-photo-2690323.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" />
+                            <p className="star-name">Becca1304</p>
+                        </div>
+                        <div className="star-item">
+                            <img alt="" className="star-img" src="https://images.pexels.com/photos/2690323/pexels-photo-2690323.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" />
+                            <p className="star-name">Becca1304</p>
+                        </div>
                     </div>
-                    <div className="star-item">
-                        <img alt="" className="star-img" src="https://images.pexels.com/photos/2690323/pexels-photo-2690323.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" />
-                        <p className="star-name">Becca1304</p>
+                    <div className="star-box">
+                        <div className="star-item">
+                            <img alt="" className="star-img" src="https://images.pexels.com/photos/2690323/pexels-photo-2690323.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" />
+                            <p className="star-name">Becca1304</p>
+                        </div>
+                        <div className="star-item">
+                            <img alt="" className="star-img" src="https://images.pexels.com/photos/2690323/pexels-photo-2690323.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" />
+                            <p className="star-name">Becca1304</p>
+                        </div>
                     </div>
-                    <div className="star-item">
-                        <img alt="" className="star-img" src="https://images.pexels.com/photos/2690323/pexels-photo-2690323.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" />
-                        <p className="star-name">Becca1304</p>
-                    </div>
-                    <div className="star-item">
-                        <img alt="" className="star-img" src="https://images.pexels.com/photos/2690323/pexels-photo-2690323.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" />
-                        <p className="star-name">Becca1304</p>
-                    </div>
+
+                  
                 </div>
             </div>
         </>

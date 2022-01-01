@@ -3,6 +3,7 @@ import facebook from "../assests/Icon/facebook.png";
 import line from "../assests/Icon/line.png";
 import ig from "../assests/Icon/instagram.png";
 
+
 export default function Footer() {
     return (
         <div className="Footer">

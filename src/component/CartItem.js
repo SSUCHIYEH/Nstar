@@ -21,7 +21,7 @@ function CartItem({ item, checkAll }) {
                 <div className="cartlist_productItem_img">
                     <img alt="" src={item.image} />
                 </div>
-                <span className="cartlist_productItem_item">{item.name}</span>
+                <span className="cartlist_productItem_item sm_mt_8">{item.name}</span>
             </div>
             <span className="cartlist_productItem_item">NT{item.price}</span>
             <div className="cartlist_productItem_icon">
