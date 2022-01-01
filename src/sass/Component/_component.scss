@@ -125,7 +125,19 @@
     justify-content: end;
     align-items: flex-end;
 }
+.display_column_end {
+    display: flex;
+    flex-direction:column;
+    justify-content: end;
+    align-items: flex-end;
+}
 /*--------width---------*/
+.w_372 {
+    width: 372px;
+    @include sm{
+        width: 291px;
+    }
+}
 .w_300 {
     width: 300px;
 }

@@ -1127,7 +1127,33 @@ img.star-img {
           align-items: flex-end;
 }
 
+.display_column_end {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
 /*--------width---------*/
+.w_372 {
+  width: 372px;
+}
+
+@media (max-width: 375px) {
+  .w_372 {
+    width: 291px;
+  }
+}
+
 .w_300 {
   width: 300px;
 }
@@ -1262,28 +1288,75 @@ img.star-img {
   outline: 0;
 }
 
-/*-------------------- intro_1 start --------------------*/
 .intro_1_container {
+  margin: 0;
+  margin-top: 64px;
   width: 100%;
-  height: 780px;
-  background-color: #ffe931;
-  background-size: cover;
-  background-repeat: no-repeat;
+  background-color: #C2C0C2;
   border-top: 1px solid #2F2F2F;
   border-bottom: 1px solid #2F2F2F;
-  background-position: 0 -40px;
 }
 
-.intro_1_item {
-  padding-top: 256px;
-  padding-left: 143px;
+.intro_1_logo {
+  width: 144px;
+  height: auto;
 }
 
-.intor_1_describe {
-  margin-top: 40px;
-  font-size: 16px;
-  width: 372px;
-  line-height: 24px;
+.intro_1_box1 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+@media (max-width: 768px) {
+  .intro_1_box1 {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
+.intro_1_description {
+  background-color: #C2C0C2;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  padding: 48px;
+}
+
+.intro_1_BG {
+  background-color: aqua;
+}
+
+.intro_1_bg {
+  width: 100%;
+  -o-object-fit: fill;
+     object-fit: fill;
+}
+
+.intro_1_bar {
+  height: auto;
 }
 
 /*-------------------- intro_1 end --------------------*/

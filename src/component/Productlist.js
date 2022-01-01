@@ -8,7 +8,7 @@ export default function Productlist({ products, text }) {
                 <p className="productlist-title">{text}</p>
                 <Row gutter={52} className="productlist-row">
                     {products.map(product => (
-                        <Col span={6} key={product.id}>
+                        <Col lg={{span:6}} md={{span:12}} sm={{span:12}} key={product.id}>
                         <ProductItem product={product} /> 
                         </Col>
                     ))}
