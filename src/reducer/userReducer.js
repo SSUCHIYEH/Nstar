@@ -4,13 +4,13 @@ import {
     USER_REMENBER_LOGIN,
     USER_LOGOUT,
     USER_SUCCESS_REGISTER,
-    USER_FAIL_REGISTER
+    USER_FAIL_REGISTER,
 } from '../const/constants';
 
 export const userSignInReducer = ( state = {
     userInfo:null,
     remenber: true,
-    error:''
+    error:'',
 }, action) => {
     switch(action.type) {
         case USER_SUCCESS_LOGIN:
@@ -19,22 +19,22 @@ export const userSignInReducer = ( state = {
                 userInfo:action.payload,
                 error:''
             }
-            case USER_FAIL_LOGIN:
-                return{
-                    ...state,
-                    userInfo: null,
-                    error: action.payload
-                }
-            case USER_REMENBER_LOGIN:
-                return{
-                    ...state,
-                    remenber: action.payload,
-                }
-            case USER_LOGOUT:
-                return{
-                    ...state,
-                    userInfo:null,
-                }
+        case USER_FAIL_LOGIN:
+            return{
+                ...state,
+                userInfo: null,
+                error: action.payload
+            }
+        case USER_REMENBER_LOGIN:
+            return{
+                ...state,
+                remenber: action.payload,
+            }
+        case USER_LOGOUT:
+            return{
+                ...state,
+                userInfo:null,
+            }
         default:
             return state;
     }

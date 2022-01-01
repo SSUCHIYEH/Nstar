@@ -1,6 +1,6 @@
 import reactRouterConfig from 'react-router-config';
 import { deleteProduct, getProductById } from '../api/productAPI';
-import { portBuyOrder } from '../api/userAPI';
+import { postBuyOrder } from '../api/userAPI';
 import {
     SET_PAGE_CONTENT,
     ADD_CART_ITEM,
@@ -70,33 +70,20 @@ export const removeProductFromOrder = () => {
     }
 }
 
-export const createOrder = (order, user_id, orderProduct) => async (dispatch) => {
+export const createOrder = (order, user_id) => async (dispatch) => {
     try {
-        const resp = await portBuyOrder(order, user_id);
+        console.log(order);
+        const resp = await postBuyOrder(order, user_id);
         if (resp.status === 200) {
+            let cartData = JSON.parse(localStorage.getItem("cartItem"))
+            // Object.keys(cartData).forEach(seller => {
+            //     cartData[seller].find(e=>)
+            // })
             dispatch({
                 type: ORDER_CREATE_SUCCESS,
                 payload: resp.order
             })
-            console.log(orderProduct);
             return resp.order
-
-
-            // if(err !== null){
-            //     dispatch({
-            //         type:ORDER_CREATE_SUCCESS,
-            //         payload:resp.order
-            //     })
-            //     return resp.order
-            // }else{
-            //     return err;
-            // }
-            // dispatch({
-            //     type: ORDER_CREATE_SUCCESS,
-            //     payload: resp.order
-            // })
-            console.log(resp);
-
         }
     } catch (e) {
         console.log(e);

@@ -28,11 +28,31 @@ export const registerWithEmailPassword = async (name, email, password) => {
   }
 };
 
-export const portBuyOrder = async (order, user_id) => {
+export const postBuyOrder = async (order, user_id) => {
   try {
     const url = `${baseURL}/api/v1/user-order/create-buy-order/${user_id}`;
     const resp = await axios.post(url, order);
     return { status: resp.status, order: resp.data }
+  } catch (e) {
+    return { status: e.response.status, detail: e.response.data.detail };
+  }
+}
+
+export const getUserProduct = async (user_id) => {
+  try {
+    const url = `${baseURL}/api/v1/user-product/my-product/${user_id}`;
+    const resp = await axios.get(url);
+    return { status: resp.status, product: resp.data.products_sell }
+  } catch (e) {
+    return { status: e.response.status, detail: e.response.data.detail };
+  }
+}
+
+export const putUserProduct = async (user_id, product) => {
+  try {
+    const url = `${baseURL}/api/v1/user-product/create-my-product/${user_id}`;
+    const resp = await axios.put(url, product);
+    return { status: resp.status, product: resp.data }
   } catch (e) {
     return { status: e.response.status, detail: e.response.data.detail };
   }

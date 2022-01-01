@@ -10,7 +10,7 @@ import { createOrder } from "../actions/productAction";
 function UserCheckout() {
   const dispatch = useDispatch();
   const history = useHistory();
-  const { orderProduct, orderDtail } = useSelector(state => {
+  const { orderProduct, orderDetail } = useSelector(state => {
     console.log(state);
     return state.product})
   const { userInfo } = useSelector(state=>state.userSignIn);
@@ -52,7 +52,7 @@ function UserCheckout() {
       "user_buy_id": userInfo.user_id,
       "product_items": product_item
     }
-    await dispatch(createOrder(order,userInfo.user_id,orderProduct));
+    await dispatch(createOrder(order,userInfo.user_id));
   }
 
   function createProductItems() {
@@ -64,7 +64,7 @@ function UserCheckout() {
         "size": item.size,
         "color": item.color,
         "tag": item.tag,
-        "price": 0,
+        "price": item.price,
         "image": item.image,
         "description": item.description
       }
@@ -74,11 +74,11 @@ function UserCheckout() {
   }
 
   useEffect(() => {
-    console.log(orderDtail);
-    if(orderDtail){
+    console.log(orderDetail);
+    if(orderDetail){
       history.push('/usercart/usercheckoutsuccess')
     }
-  }, [orderDtail])
+  }, [orderDetail])
 
 
 
@@ -104,7 +104,7 @@ function UserCheckout() {
       <div className="userCheckout_order">
         <div className="display_center mb_36">
           <img alt="" className="img_36" src={img_userIcon} />
-          <p className="pl_16">Becca</p>
+          <p className="pl_16">{orderProduct[0].owner.username}</p>
         </div>
         <div className="line mb_36"></div>
 

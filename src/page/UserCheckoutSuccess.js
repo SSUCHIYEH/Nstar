@@ -7,7 +7,7 @@ import { useEffect } from "react";
 import { removeProductFromOrder } from "../actions/productAction";
 import { deleteProduct } from "../api/productAPI";
 function UserCheckoutSuccess() {
-   const { orderDtail, orderProduct } = useSelector(state => state.product)
+   const { orderDetail, orderProduct } = useSelector(state => state.product)
    const dispatch = useDispatch();
 
    async function _handledeleteProduct() {
@@ -18,8 +18,8 @@ function UserCheckoutSuccess() {
    }
 
    useEffect(() => {
-      console.log(orderDtail);
-   }, [orderDtail])
+      console.log(orderDetail);
+   }, [orderDetail])
    useEffect(() => {
       _handledeleteProduct();
       dispatch(removeProductFromOrder());
@@ -49,15 +49,16 @@ function UserCheckoutSuccess() {
                </div>
                <div className="line mt_36"></div>
 
-               {/* map */}
+               {
+               orderDetail.product_items.map((item)=>(
                <div className="display_center_between mt_36">
                   <div className="display_center">
-                     <img alt="" className="img_36" src={img_userIcon} />
-                     <p className="pl_16">素色大學T</p>
+                     <img alt="" className="img_36" src={item.image} />
+                     <p className="pl_16">{item.name}</p>
                   </div>
-                  <p>NT130</p>
+                  <p>{item.price}</p>
                </div>
-               {/* map */}
+               ))}
 
                <div className="line mt_36"></div>
                <p className="font_20 mt_36">宅配資訊</p>
@@ -72,7 +73,7 @@ function UserCheckoutSuccess() {
                <div className="line mt_36"></div>
                <div className="userCheckout_shipDetail mt_36">
                   <p className="font_20">訂單總金額</p>
-                  <p className="font_20">NT360</p>
+                  <p className="font_20">NT{orderDetail.totalprice}</p>
                </div>
 
 

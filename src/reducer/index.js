@@ -20,7 +20,8 @@ const initialState = {
         : null,
         product:null,
         orderProduct:null,
-        orderDtail:null,
+        orderDetail:null,
+        reload:false,
     }
     
 }
