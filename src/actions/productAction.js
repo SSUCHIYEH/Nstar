@@ -75,10 +75,10 @@ export const createOrder = (order, user_id) => async (dispatch) => {
         console.log(order);
         const resp = await postBuyOrder(order, user_id);
         if (resp.status === 200) {
-            let cartData = JSON.parse(localStorage.getItem("cartItem"))
-            // Object.keys(cartData).forEach(seller => {
-            //     cartData[seller].find(e=>)
-            // })
+            // let cartData = JSON.parse(localStorage.getItem("cartItem"))
+            // // Object.keys(cartData).forEach(seller => {
+            // //     cartData[seller].find(e=>)
+            // // })
             dispatch({
                 type: ORDER_CREATE_SUCCESS,
                 payload: resp.order

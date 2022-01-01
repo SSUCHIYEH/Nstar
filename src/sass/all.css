@@ -1104,7 +1104,7 @@ img.star-img {
   -moz-appearance: none;
   background-image: linear-gradient(45deg, transparent 50%, #2F2F2F 50%), linear-gradient(135deg, #2F2F2F 50%, transparent 50%);
   background-position: calc(100% - 20px) calc(1em + 2px), calc(100% - 15px) calc(1em + 2px), calc(100% - 2.5em) 0.5em;
-  background-size: 5px 5px, 5px 5px, 1px 1.5em;
+  background-size: 5px 5px, 5px 5px, 1px 1.5em;
   background-repeat: no-repeat;
   height: 40px;
   width: 126px;
@@ -1725,6 +1725,10 @@ img.star-img {
 .ant-checkbox-checked .ant-checkbox-inner {
   background-color: black;
   border-color: black;
+}
+
+.ant-checkbox-inner {
+  border: 1px solid #9B9B9B;
 }
 
 .addCart-button {

@@ -38,3 +38,11 @@ export const deleteProduct = async (_product_id) => {
         return { status:e.response.status, detail: e.response.data.detail };
     }
 }
+
+// export const getSellOrder = () => {
+//     try{
+
+//     }catch(e){
+
+//     }
+// }
