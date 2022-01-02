@@ -1438,7 +1438,7 @@ input.input_file {
   -moz-appearance: none;
   background-image: linear-gradient(45deg, transparent 50%, #2F2F2F 50%), linear-gradient(135deg, #2F2F2F 50%, transparent 50%);
   background-position: calc(100% - 20px) calc(1em + 2px), calc(100% - 15px) calc(1em + 2px), calc(100% - 2.5em) 0.5em;
-  background-size: 5px 5px, 5px 5px, 1px 1.5em;
+  background-size: 5px 5px, 5px 5px, 1px 1.5em;
   background-repeat: no-repeat;
   height: 40px;
   width: 126px;
@@ -2519,39 +2519,16 @@ img.star-img {
 }
 
 .cartlist_totlebox_btn_ {
-  /*-------------------- cartlist end --------------------*/
-}
-
-.cartlist_totlebox_btn_ .cartlist_totlebox_detail {
-  width: 50%;
-  /* background-color: aliceblue; */
-  /* text-align: end; */
-  padding-right: 10px;
-}
-
-.cartlist_totlebox_btn_ .cartlist_totlebox_detail_text {
-  font-size: 20px;
-}
-
-.cartlist_totlebox_btn_ .cartlist_totlebox_detail_price {
-  font-size: 24px;
-  font-weight: bold;
-}
-
-.cartlist_totlebox_btn_ .cartlist_totlebox_btn {
-  width: 50%;
-  /* background-color: #FFE931; */
-}
-
-.cartlist_totlebox_btn_ .cartlist_totlebox_btn_ {
   font-size: 20px;
   height: 62px;
 }
 
-.cartlist_totlebox_btn_ .cart-noitem {
+.cart-noitem {
   margin: 0px auto;
   width: 100%;
   max-width: 1280px;
   margin-top: 100px;
 }
+
+/*-------------------- cartlist end --------------------*/
 /*# sourceMappingURL=all.css.map */
