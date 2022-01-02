@@ -5,6 +5,12 @@ export const SET_LOADING_FALSE = "SET_LOADING_FALSE";
 /*------------------商品詳細頁-----------------------*/
 export const SET_PAGE_CONTENT = "SET_PAGE_CONTENT";
 
+/*------------------收藏-----------------------*/
+export const GET_USER_LIKE = "GET_USER_LIKE";
+export const ADD_USER_LIKE = "ADD_USER_LIKE";
+export const DELETE_USER_LIKE = "DELETE_USER_LIKE";
+export const REMOVE_USER_LIKE = "REMOVE_USER_LIKE"; 
+
 /*------------------購物車-----------------------*/
 export const CLEAN_CART_ITEMS = "CLEAN_CART_ITEMS";
 export const ADD_CART_ITEM = "ADD_CART_ITEM";

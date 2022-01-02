@@ -26,7 +26,7 @@ function LogIn() {
    };
     
    useEffect(() => {
-      if(userInfo) history.push("/");
+      if(userInfo) history.goBack();
    }, [userInfo])
    return (
       

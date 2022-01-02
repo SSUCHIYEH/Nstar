@@ -1,6 +1,5 @@
 import AddToCart from "../component/AddToCart";
 import chat from '../assests/Icon/chat-bubble.png';
-import like from '../assests/Icon/like.png'
 import Productlist from "../component/Productlist";
 import anotherProduct from '../json/women_bottom.json';
 import { useSelector, useDispatch } from "react-redux";
@@ -9,21 +8,23 @@ import { useEffect, useState } from "react";
 import { setProductDetail } from "../actions/productAction";
 import { getProductById } from "../api/productAPI";
 import { addToCart } from "../actions/productAction";
+import LikeButton from "../component/LikeButton";
+import { storeUserLike } from '../actions/userAction';
 
 export default function ProductDetail() {
     const dispatch = useDispatch();
     const { product_id } = useParams();
     const [product, setProduct] = useState();
-    const {cartItems} = useSelector((state)=> {
-        console.log(state.product);
-        return state.product
-    });
-    
+    const { userInfo } = useSelector(state => state.userSignIn);
+    const { cartItems } = useSelector((state) =>state.product);
 
     useEffect(async () => {
         if (product_id) {
             const resp = await getProductById(product_id);
             setProduct(resp.product);
+            if(userInfo){
+                await dispatch(storeUserLike(userInfo.user_id))
+            }
         }
     }, [])
 
@@ -51,7 +52,7 @@ export default function ProductDetail() {
                                 <div className="productdetail_title">{product.name}</div>
                                 <div className="productdetail_price">NT {product.price}</div>
                                 <div className="productdetail_button">
-                                    <img className="productdetail_icon" src={like} alt="" />
+                                   <LikeButton product_id={product.id}/>
                                     <img className="productdetail_icon" src={chat} alt="" />
                                 </div>
 

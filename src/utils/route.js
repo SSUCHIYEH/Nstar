@@ -8,62 +8,68 @@ import UserCheckout from '../page/UserCheckout';
 import UserCheckoutSuccess from '../page/UserCheckoutSuccess';
 import UserProductShop from '../page/UserProductsShop';
 import UserOrderQuery from '../page/UserOrderQuery';
+import UserLike from '../page/UserLike';
 
 const routes = [
     {
-        path:'/',
+        path: '/',
         component: Home,
         exact: true,
     },
     {
-        path:'/product/category/:category',
+        path: '/product/category/:category',
         component: ProductsCategory,
         exact: true,
     },
     {
-        path:'/product/detail/:category/:product_id',
+        path: '/product/detail/:category/:product_id',
         component: ProductDetail,
         exact: true,
 
     },
     {
-        path:'/usercart',
+        path: '/usercart',
         component: UserCart,
         exact: true,
     },
     {
-        path:'/usercart/usercheckout',
+        path: '/usercart/usercheckout',
         component: UserCheckout,
         exact: true,
     },
     {
-        path:'/usercart/usercheckoutsuccess',
+        path: '/usercart/usercheckoutsuccess',
         component: UserCheckoutSuccess,
         exact: true,
     },
     {
-        path:'/signup',
+        path: '/signup',
         component: SignUp,
         exact: true,
     },
     {
-        path:'/login',
+        path: '/login',
         component: LogIn,
         exact: true,
     },
     {
-        path:'/userproductshop',
+        path: '/userproductshop',
         component: UserProductShop,
         exact: true,
     },
     {
-        path:'/userorderquery/:type',
+        path: '/userorderquery/:type',
         component: UserOrderQuery,
         exact: true,
     },
+    {
+        path: '/userlike',
+        component: UserLike,
+        exact: true,
+    }
 ]
 
-export{routes}
+export { routes }
 
 // {
 //     path:'/product/personal/:id',

@@ -68,3 +68,33 @@ export const postImageUpload = async (file) => {
     return { status: e.response.status, detail: e.response.data.detail };
   }
 }
+
+export const putUserLike = async (user_id, product_id) => {
+  try {
+    const url = `${baseURL}/api/v1/user-like/create-like-collect/${user_id}`;
+    const resp = await axios.put(url, { product_id });
+    return { status: resp.status, like: resp.data };
+  } catch (e) {
+    return { status: e.response.status, detail: e.response.data.detail };
+  }
+}
+
+export const getUserLike = async (user_id) => {
+  try {
+    const url = `${baseURL}/api/v1/user-like/like-collect/${user_id}`;
+    const resp = await axios.get(url);
+    return { status: resp.status, like: resp.data.collects_like }
+  } catch (e) {
+    return { status: e.response.status, detail: e.response.data.detail };
+  }
+}
+
+export const deleteUserLike = async (product_id) => {
+  try {
+    const url = `${baseURL}/api/v1/user-like/delete-like-collect/${product_id}`;
+    const resp = await axios.get(url);
+    return { status: resp.status, detail: resp.detail }
+  } catch (e) {
+    return { status: e.response.status, detail: e.response.data.detail };
+  }
+}

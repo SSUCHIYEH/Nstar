@@ -49,9 +49,8 @@ export default function NavBar() {
         console.log(localStorage.getItem('userInfo'));
     }, [])
 
-    const hangleLogout = () => {
+    const handleLogout = () => {
         dispatch(logout());
-        history.push("/");
     }
 
 
@@ -106,9 +105,9 @@ export default function NavBar() {
                                 <ul className="ul dropdownlist m-_100">
                                     <li className="li dropdownlist_item"><NavItem to="/userproductshop" >我的商店</NavItem></li>
                                     <li className="li dropdownlist_item"><NavItem to="/userorderquery/buy" >查看購買紀錄</NavItem></li>
-                                    <li className="li dropdownlist_item"><NavItem to="/" >我的收藏</NavItem></li>
+                                    <li className="li dropdownlist_item"><NavItem to="/userlike" >我的收藏</NavItem></li>
                                     <li className="li dropdownlist_item"><NavItem to="/" >帳號設定</NavItem></li>
-                                    <li className="li dropdownlist_item"><a to="/" onClick={hangleLogout} >登出</a></li>
+                                    <li className="li dropdownlist_item"><a onClick={handleLogout} >登出</a></li>
                                 </ul>
                             </li>
                             :
@@ -205,7 +204,7 @@ export default function NavBar() {
                                 </li>
                                 <li className="w_180 mt_16 ml_36">
                                     <li onClick={toggleHamburger}>
-                                        <NavItem to="/" ><p className="font_black">我的收藏</p></NavItem>
+                                        <NavItem to="/userlike" ><p className="font_black">我的收藏</p></NavItem>
                                     </li>
                                     <div className="line mt_8"></div>
                                 </li>
@@ -217,28 +216,28 @@ export default function NavBar() {
                                 </li>
                                 <li className="w_180 mt_16 ml_36">
                                     <li onClick={toggleHamburger}>
-                                        <a to="/" onClick={hangleLogout} ><p className="font_black">登出</p></a>
+                                        <a onClick={handleLogout} ><p className="font_black">登出</p></a>
                                     </li>
                                     <div className="line mt_8"></div>
                                 </li>
-                                
+
                             </li>
                             :
                             <div className="display_center_between ml_36 mt_48 w_230">
-                            <li>
-                                <button className="btn_unSelected">
-                                    <a href="/login" className="font_black font_hover_y">Log in</a>
+                                <li>
+                                    <button className="btn_unSelected">
+                                        <a href="/login" className="font_black font_hover_y">Log in</a>
                                     </button>
-                            </li>
-                            <li>
-                            <button className="btn_selected">
-                                <a href="/login" className="font_white">Sign up</a>
-                                </button>
-                            </li>
+                                </li>
+                                <li>
+                                    <button className="btn_selected">
+                                        <a href="/login" className="font_white">Sign up</a>
+                                    </button>
+                                </li>
 
-                        </div>
+                            </div>
 
-                            }
+                        }
                     </ul>
                     :
                     ""

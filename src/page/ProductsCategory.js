@@ -1,31 +1,36 @@
-import { useContext, useEffect,useState } from "react";
+import { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
 import { getProductByCategory } from "../api/productAPI.js";
 import Productlist from "../component/Productlist.js";
-import { StoreContext } from "../store/index.js";
+import { SET_LOADING_FALSE, SET_LOADING_TRUE } from "../const/constants.js";
 
 
 
 function ProductsCategory() {
     const [productData, setProductData] = useState();
-    const {category} = useParams();
-    
+    const { category } = useParams();
+    const dispatch = useDispatch();
+
     useEffect(() => {
-        getProductByCategory(category).then((resp)=>{
-            if(resp.data){
+        dispatch({ type: SET_LOADING_TRUE })
+        getProductByCategory(category).then((resp) => {
+            if (resp.data) {
                 console.log(resp.data)
                 setProductData(resp.data);
+                dispatch({ type: SET_LOADING_FALSE })
             }
-        }).catch((err)=>{
+        }).catch((err) => {
             console.log(err);
+            dispatch({ type: SET_LOADING_FALSE })
         })
     }, [category])
 
     return (
         <>
-            {productData?
+            {productData ?
                 <Productlist products={productData} />
-            :   null 
+                : null
             }
         </>
 

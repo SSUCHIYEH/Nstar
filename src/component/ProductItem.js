@@ -1,7 +1,9 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useHistory } from 'react-router-dom';
+import LikeButton from './LikeButton';
 export default function ProductItem({ product }) {
+    console.log(product.id)
     const history = useHistory();
     const [user, setUser] = useState(false)
     useEffect(() => {
@@ -23,8 +25,13 @@ export default function ProductItem({ product }) {
                     null
                     :
                     <>
-                        <p className="card-name">{product.name}</p>
-                        <p className="card-price">NT {product.price}</p>
+                        <div className='card_Info'>
+                            <div>
+                                <p className="card-text">{product.name}</p>
+                                <p className="card-text">NT {product.price}</p>
+                            </div>
+                            <LikeButton product_id={product.id}/>
+                        </div>
                     </>
 
             }
@@ -32,16 +39,3 @@ export default function ProductItem({ product }) {
         </a>
     )
 }
-
-
-
-
-/*
-<Link className="card" to={`/product/detail/${product.category}/${product.id}`}>
-            <div className="card-img">
-            <img src={product.image} alt="" />
-            </div>
-            <p className="card-name">{product.name}</p>
-            <p className="card-price">NT {product.price}</p>
-        </Link>
- */
