@@ -83,8 +83,8 @@ function ProductCreateModal(props) {
                             imageSrc={imageSrc}
                             setImageSrc={setImageSrc}
                             style={{
-                                width: 200,
-                                height: 200,
+                                width: 268,
+                                height: 268,
                             }}
                         />
                         <input
@@ -96,10 +96,10 @@ function ProductCreateModal(props) {
                             accept="image/*" className="btn_unSelected mt_8" type="file" {...register("image")} alt="上傳圖片" />
                         <button className="btn_unSelected mt_8">上傳圖片</button>
                         <input className="input mt_36 w_268" type="text" {...register("name", { required: true })} placeholder="商品名稱" />
-                        <input className="input mt_36 w_268" type="number" {...register("price", { required: true })} placeholder="商品價格" />
+                        <input className="input mt_36 w_268 mb_36" type="number" {...register("price", { required: true })} placeholder="商品價格" />
                     </div>
                     <div className="modal_add_box2">
-                        <input className="input ç w_268" type="text" {...register("size", { required: true })} placeholder="尺寸" />
+                        <input className="input  w_268" type="text" {...register("size", { required: true })} placeholder="尺寸" />
                         <input className="input mt_36 w_268" type="text" {...register("brand", { required: false })} placeholder="品牌" />
                         <input className="input mt_36 w_268" type="text" {...register("description", { required: true })} placeholder="狀況" />
                         <input className="input mt_36 w_268" type="text" {...register("color", { required: true })} placeholder="顏色" />

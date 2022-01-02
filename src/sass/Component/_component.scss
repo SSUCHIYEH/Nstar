@@ -233,6 +233,7 @@
 
 
 .select{
+    background-color: white;
     -webkit-appearance: none;
     -moz-appearance: none;
     background-image:
@@ -248,9 +249,6 @@
     5px 5px,
     1px 1.5em;
     background-repeat: no-repeat;
-
-
-
     height: 40px;
     width:126px;
     border: 1px solid $main_black;
