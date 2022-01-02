@@ -1,0 +1,47 @@
+.wrapper {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    z-index: 999;
+    width: 100%;
+    background-color: rgba($color: $main_black_hover, $alpha: 0.8);
+  }
+  
+  .spinner * {
+    display: inline-block;
+    width: 1rem;
+    height: 1rem;
+    background-color: $main_yellow;
+    border-radius: 1rem;
+    margin: 0 0.2rem;
+  }
+  .spinner .spinner-1 {
+    animation: fade 1.1s ease-in-out 0.18s infinite both;
+  }
+  .spinner .spinner-2 {
+    animation: fade 1.1s ease-in-out 0.36s infinite both;
+  }
+  .spinner .spinner-3 {
+    animation: fade 1.1s ease-in-out 0.54s infinite both;
+  }
+  
+  @keyframes fade {
+    0% {
+      opacity: 0.35;
+      transform: scale(0.87);
+    }
+    37.5% {
+      opacity: 1;
+      transform: scale(1);
+    }
+    75% {
+      opacity: 0.35;
+      transform: scale(0.87);
+    }
+    100% {
+      opacity: 0.35;
+      transform: scale(0.87);
+    }
+  }

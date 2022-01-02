@@ -57,3 +57,14 @@ export const putUserProduct = async (user_id, product) => {
     return { status: e.response.status, detail: e.response.data.detail };
   }
 }
+
+export const postImageUpload = async (file) => {
+  try {
+    const url = `${baseURL}/api/v1/products/image`;
+    const resp = await axios.post(url, file);
+    const imageURL = `${baseURL}/api/v1/products/image/${resp.data.file_name}`
+    return { status: resp.status, url: imageURL }
+  } catch (e) {
+    return { status: e.response.status, detail: e.response.data.detail };
+  }
+}

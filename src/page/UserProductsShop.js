@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 import { getUserProduct } from "../api/userAPI";
 import { productReducer } from "../reducer/productReducer";
 import { useSelector } from "react-redux";
+import Spinner from "../component/Spinner";
 
 function UserProductShop() {
     const [addModalShow, setAddModalShow] = useState(false);
@@ -52,7 +53,7 @@ function UserProductShop() {
                             <p className="font_36 pl_16">{userInfo.username}</p>
                         </div>
                         <div className="UserProductShop_btnBar">
-                            <Link to={"/userorderquery"}>
+                            <Link to={"/userorderquery/sell"}>
                                 <button className="btn_unSelected">我的訂單</button>
                             </Link>
 

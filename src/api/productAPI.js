@@ -39,10 +39,30 @@ export const deleteProduct = async (_product_id) => {
     }
 }
 
-// export const getSellOrder = () => {
-//     try{
+export const getSellOrder = async (user_id) => {
+    try{
+        const url = `${baseURL}/api/v1/user-order/get-sell-order/${user_id}`;
+        const resp = await axios.get(url);
+        return {
+            status: resp.status,
+            order: resp.data.order_sell,
+        }
+    }catch(e){
+        console.log(e)
+        return { status:e.response.status, detail: e.response.data.detail };
+    }
+}
 
-//     }catch(e){
-
-//     }
-// }
+export const getBuyOrder = async (user_id) => {
+    try{
+        const url = `${baseURL}/api/v1/user-order/get-buy-order/${user_id}`;
+        const resp = await axios.get(url);
+        return {
+            status: resp.status,
+            order: resp.data.order_buy,
+        }
+    }catch(e){
+        console.log(e)
+        return { status:e.response.status, detail: e.response.data.detail };
+    }
+}
