@@ -8,10 +8,11 @@ import { useHistory } from "react-router-dom";
 import { createProductByUserId } from "../actions/userAction"
 import { postImageUpload } from "../api/userAPI";
 import axios from '../api/index'
+import { SET_LOADING_FALSE, SET_LOADING_TRUE } from "../const/constants";
 
 function ProductCreateModal(props) {
     const dispatch = useDispatch();
-    const { register, handleSubmit } = useForm();
+    const { register, handleSubmit,watch } = useForm();
     const history = useHistory();
     const { changeShow } = props;
     const [imageSrc, setImageSrc] = useState(img_default);
@@ -19,9 +20,13 @@ function ProductCreateModal(props) {
     const [topOption, setTopOption] = useState("top");
     const [menOption, setMenOption] = useState("women");
 
-    // useEffect(() => {
-    //     console.log(imageSrc)
-    // }, [imageSrc])
+    useEffect(() => {
+        if(watch("image").length !== 0){
+            setImageSrc(URL.createObjectURL(watch("image")[0]));
+        }
+        console.log(watch("image"))
+    }, [watch("image")])
+
 
     const selectFemaleOrMale = (e) => {
         console.log(e.target.value);
@@ -37,13 +42,17 @@ function ProductCreateModal(props) {
         setImageSrc(URL.createObjectURL(e.target.files[0]));
     }
 
-    const inputImage = async (file) => {
-        console.log(file);
+
+    const onChangeImage = (event) => {
+        console.log(event);
+        //setImageSrc(event.target.value)
+        let reader = new FileReader();
+        reader.readAsDataURL(event.target.value);
+        console.log(reader);
     }
 
-
     const onSubmit = async (value) => {
-        //const imageResp = await postImageUpload(value.image);
+        dispatch({type:SET_LOADING_TRUE})
         let formData = new FormData();
         formData.append("file", value.image[0]);
         const imageResp = await postImageUpload(formData)
@@ -53,7 +62,6 @@ function ProductCreateModal(props) {
                 "category": String(menOption + "_" + topOption),
                 "name": value.name,
                 "price": value.price,
-                
                 "image": imageResp.url,
                 "description": value.description,
                 "owner_id": userInfo.user_id,
@@ -64,8 +72,13 @@ function ProductCreateModal(props) {
             console.log(product);
             const resp = await dispatch(createProductByUserId(userInfo.user_id, product));
             if (resp) {
+                dispatch({type:SET_LOADING_FALSE});
                 changeShow();
+                
             }
+        }
+        else{
+            dispatch({type:SET_LOADING_FALSE})
         }
 
 
@@ -78,23 +91,18 @@ function ProductCreateModal(props) {
                 <p className="font_24">新增商品</p>
                 <div className="modal_add_contentbox mt_36">
                     <div >
-                        <ImageUpload
-                            handleImageSelect={handleImageSelect}
-                            imageSrc={imageSrc}
-                            setImageSrc={setImageSrc}
-                            style={{
-                                width: 200,
-                                height: 200,
-                            }}
-                        />
-                        <input
-                            onChange={inputImage}
-                            style={{
-                                width: 200,
-                                height: 42,
-                            }}
-                            accept="image/*" className="btn_unSelected mt_8" type="file" {...register("image")} alt="上傳圖片" />
-                        <button className="btn_unSelected mt_8">上傳圖片</button>
+                        <img style={{width:263,height:263}} alt="" className="" src={imageSrc} />
+                        <div className="input_file_wrapper">
+                            <input
+                                readOnly
+                                id="productImage"
+                                className="input_file"
+                                onChange={onChangeImage}
+                                accept="image/*" type="file" {...register("image", {
+                                    onBlur: (e) => onChangeImage(e),
+                                })} alt="上傳圖片" />
+                            <label htmlFor="productImage" className="input_file_trigger btn_unSelected">上傳圖片</label>
+                        </div>
                         <input className="input mt_36 w_268" type="text" {...register("name", { required: true })} placeholder="商品名稱" />
                         <input className="input mt_36 w_268" type="number" {...register("price", { required: true })} placeholder="商品價格" />
                     </div>

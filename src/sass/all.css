@@ -911,6 +911,24 @@ body {
   }
 }
 
+.input_file_wrapper {
+  position: relative;
+  width: 104px;
+}
+
+input.input_file {
+  position: absolute;
+  width: 104px;
+  left: 15px;
+  top: 5px;
+  opacity: 0;
+}
+
+.input_file_trigger {
+  display: block;
+  cursor: pointer;
+}
+
 /*--------訂單詳細資訊---------*/
 .modal_order {
   display: block;
@@ -2423,6 +2441,27 @@ img.star-img {
   /* background-color: #FFE931; */
 }
 
+.cartlist_totlebox_detail {
+  width: 50%;
+  /* background-color: aliceblue; */
+  /* text-align: end; */
+  padding-right: 10px;
+}
+
+.cartlist_totlebox_detail_text {
+  font-size: 20px;
+}
+
+.cartlist_totlebox_detail_price {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.cartlist_totlebox_btn {
+  width: 50%;
+  /* background-color: #FFE931; */
+}
+
 .cartlist_totlebox_btn_ {
   font-size: 20px;
   height: 62px;
@@ -2434,6 +2473,4 @@ img.star-img {
   max-width: 1280px;
   margin-top: 100px;
 }
-
-/*-------------------- cartlist end --------------------*/
 /*# sourceMappingURL=all.css.map */
