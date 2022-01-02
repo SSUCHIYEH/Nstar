@@ -40,6 +40,7 @@ body {
   line-height: 25px;
   letter-spacing: 0.05em;
   color: #1F1F1F;
+  height: auto;
 }
 
 ol, ul {
@@ -1735,6 +1736,7 @@ img.star-img {
   border-bottom: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  min-height: calc(100vh - 66px - 88px);
   margin-top: 64px;
   padding: 88px 120px;
 }
@@ -1898,6 +1900,7 @@ img.star-img {
   border-bottom: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  min-height: calc(100vh - 66px - 88px);
   margin-top: 64px;
   padding: 88px 120px;
 }
@@ -1943,6 +1946,7 @@ img.star-img {
   border-bottom: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  min-height: calc(100vh - 66px - 88px);
   margin-top: 64px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -2030,6 +2034,7 @@ img.star-img {
   border-bottom: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  min-height: calc(100vh - 66px - 88px);
   margin-top: 64px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -2111,6 +2116,7 @@ img.star-img {
   border-bottom: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  min-height: calc(100vh - 66px - 88px);
   margin-top: 64px;
   padding: 48px 144px;
 }
