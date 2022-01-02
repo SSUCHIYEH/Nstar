@@ -52,7 +52,7 @@ function UserProductShop() {
                             <p className="font_36 pl_16">{userInfo.username}</p>
                         </div>
                         <div className="UserProductShop_btnBar">
-                            <Link to={"/userorderquery"}>
+                            <Link to={"/userorderquery/sell"}>
                                 <button className="btn_unSelected">我的訂單</button>
                             </Link>
 

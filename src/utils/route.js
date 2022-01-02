@@ -57,7 +57,7 @@ const routes = [
         exact: true,
     },
     {
-        path:'/userorderquery',
+        path:'/userorderquery/:type',
         component: UserOrderQuery,
         exact: true,
     },

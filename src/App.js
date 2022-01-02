@@ -1,8 +1,4 @@
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
-import Home from './page/Home.js'
-import ProductsCategory from './page/ProductsCategory'
-import Product from './page/Product'
-import Cart from './page/Cart.js'
 import "antd/dist/antd.css";
 import './sass/all.css';
 import { StoreProvider } from './store/index.js';
@@ -10,8 +6,6 @@ import {routes} from './utils/route';
 import { renderRoutes } from 'react-router-config';
 import Footer from './component/Footer.js'
 import Navbar from './component/Navbar';
-import UserCheckout from './page/UserCheckout.js';
-import UserProductDetail from "./page/UserProductDetail";
 
 function App() {
   return (
