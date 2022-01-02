@@ -13,6 +13,7 @@ export default function UserCart() {
     const dispatch = useDispatch();
     const [count, setCount] = useState(0);
     const [price, setPrice] = useState(0);
+    const [selectOrder, setSelectOrder] = useState(null);
 
     const { cartItems, orderProduct } = useSelector((state) => {
         console.log(state.product);
@@ -20,33 +21,37 @@ export default function UserCart() {
     });
 
     function TotalPrice() {
-        return orderProduct.reduce((sum, item) => sum + item.price, 0)
+        return selectOrder.reduce((sum, item) => sum + item.price, 0)
     }
 
     function clickAllCheck(e) {
         let storeCheck = { ...checkAll };
         storeCheck[e.target.data] = !checkAll[e.target.data];
         if (storeCheck[e.target.data]) {
-            dispatch(addProductToOrder(cartItems[e.target.data]))
+            setSelectOrder(cartItems[e.target.data])
+            // dispatch(addProductToOrder(cartItems[e.target.data]))
         } else {
-            dispatch(removeProductFromOrder())
+            setPrice(0);
+            setCount(0);
+            setSelectOrder(null);
         }
         setCheckAll(storeCheck);
     }
 
     function handleCreateOrder() {
-        if(orderProduct){
+        if (selectOrder) {
+            dispatch(addProductToOrder(selectOrder))
             history.push('/usercart/usercheckout');
         }
     }
 
     // 計算訂單內商品的總價與數量
     useEffect(() => {
-        if (orderProduct) {
+        if (selectOrder) {
             setPrice(TotalPrice());
-            setCount(orderProduct.length);
+            setCount(selectOrder.length);
         }
-    }, [orderProduct])
+    }, [selectOrder])
 
     useEffect(async () => {
         if (cartItems) {
@@ -57,10 +62,6 @@ export default function UserCart() {
             setCheckAll(storeCheck);
         }
     }, [])
-
-    useEffect(() => {
-        console.log(checkAll);
-    }, [checkAll])
 
     if (cartItems) {
         return (

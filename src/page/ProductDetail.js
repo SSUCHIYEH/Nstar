@@ -10,6 +10,7 @@ import { getProductById } from "../api/productAPI";
 import { addToCart } from "../actions/productAction";
 import LikeButton from "../component/LikeButton";
 import { storeUserLike } from '../actions/userAction';
+import { SET_LOADING_FALSE, SET_LOADING_TRUE } from "../const/constants";
 
 export default function ProductDetail() {
     const dispatch = useDispatch();
@@ -20,11 +21,13 @@ export default function ProductDetail() {
 
     useEffect(async () => {
         if (product_id) {
+            dispatch({type:SET_LOADING_TRUE})
             const resp = await getProductById(product_id);
             setProduct(resp.product);
             if(userInfo){
                 await dispatch(storeUserLike(userInfo.user_id))
             }
+            dispatch({type:SET_LOADING_FALSE})
         }
     }, [])
 
@@ -56,7 +59,7 @@ export default function ProductDetail() {
                                     <img className="productdetail_icon" src={chat} alt="" />
                                 </div>
 
-                                <button className="addCart-button" onClick={handleAddToCart} >
+                                <button className="addCart-button btn_selected" onClick={handleAddToCart} >
                                     <span>加入購物車</span>
                                 </button>
 

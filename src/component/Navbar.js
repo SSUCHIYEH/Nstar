@@ -18,32 +18,46 @@ import { useHistory } from "react-router-dom/";
 export default function NavBar() {
     const history = useHistory();
     const dispatch = useDispatch();
+    const { cartItems } = useSelector((state) => state.product);
     const { userInfo } = useSelector((state) => state.userSignIn);
-    //const { state: { cartItems } } = useContext(StoreContext);
     const [active, setAcitve] = useState(false);
-    const [ClassName, setClassname] = useState("collapse hide");
+    const [count, setCount] = useState(0);
 
     //漢堡選單
     const [hamburgerOpen, setHamburgerOpen] = useState(false);
     const toggleHamburger = () => {
         setHamburgerOpen(!hamburgerOpen)
     }
-    // let counts = cartItems.length;
 
     function toggle() {
         setAcitve(!active)
     }
+    // useEffect(() => {
+    //     if (active) {
+    //         setClassname("collapse")
+
+    //     } else {
+    //         setTimeout(() => {
+    //             setClassname("collapse hide")
+    //         }, 100);
+
+    //     }
+    // }, [active])
+
     useEffect(() => {
-        if (active) {
-            setClassname("collapse")
+        if (cartItems) {
+            {
+                Object.keys(cartItems).forEach(seller => (
+                    cartItems[seller].map(() => (
+                        setCount(count + 1)
+                    ))
 
-        } else {
-            setTimeout(() => {
-                setClassname("collapse hide")
-            }, 100);
-
+                ))
+            }
+        }else{
+            setCount(0);
         }
-    }, [active])
+    }, [cartItems])
 
     useEffect(() => {
         console.log(localStorage.getItem('userInfo'));
@@ -91,10 +105,9 @@ export default function NavBar() {
                     <li className="li nav_list_item">
                         <div onMouseEnter={toggle}>
                             <NavItem to="/usercart">
-
-                                <img alt="" className="navlist-icon" src={cart_icon} />
-                                {/* <Badge showZero={true} count={counts} size={"small"}>
-                                </Badge> */}
+                                <Badge showZero={true} count={count} size={"small"}>
+                                    <img alt="" className="navlist-icon" src={cart_icon} />
+                                </Badge>
                             </NavItem>
                         </div>
                     </li>

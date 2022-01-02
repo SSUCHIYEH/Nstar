@@ -13,13 +13,16 @@ export default function ProductItem({ product }) {
     }, []);
 
     const handleOnClickItem = () => {
-        history.push(`/product/detail/${product.category}/${product.id}`);
+        if (user) { history.push(`/userproductshop/detail/${product.id}`) }
+        else { history.push(`/product/detail/${product.category}/${product.id}`); }
     }
     return (
-        <a className="card" onClick={handleOnClickItem}>
-            <div className="card-img">
-                <img src={product.image} alt="" />
-            </div>
+        <>
+            <a className="card" onClick={handleOnClickItem}>
+                <div className="card-img">
+                    <img src={product.image} alt="" />
+                </div>
+            </a>
             {
                 user ?
                     null
@@ -30,12 +33,13 @@ export default function ProductItem({ product }) {
                                 <p className="card-text">{product.name}</p>
                                 <p className="card-text">NT {product.price}</p>
                             </div>
-                            <LikeButton product_id={product.id}/>
+                            <LikeButton product_id={product.id} />
                         </div>
                     </>
 
             }
 
-        </a>
+
+        </>
     )
 }

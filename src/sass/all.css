@@ -100,13 +100,13 @@ body {
 
 @media (max-width: 1024px) {
   .productlist_container {
-    max-width: 969px;
+    max-width: 800px;
   }
 }
 
 @media (max-width: 768px) {
   .productlist_container {
-    max-width: 696px;
+    max-width: 592px;
   }
 }
 
@@ -189,10 +189,11 @@ body {
 
 /*-----------productdetail----------------*/
 .productdetail_container {
+  max-width: 1104px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  border: 1px solid #000000;
+  margin: 0 auto;
 }
 
 @media (max-width: 425px) {
@@ -206,8 +207,7 @@ body {
 }
 
 .productdetail_img {
-  width: 100%;
-  margin-left: 100px;
+  margin-left: 53px;
 }
 
 @media (max-width: 768px) {
@@ -257,20 +257,22 @@ body {
   }
 }
 
-.productdetail_detail {
-  height: 695px;
-}
-
 .productdetail_detail_detail {
   margin-top: 85px;
-  margin-left: 50px;
-  height: 525px;
-  width: 313px;
+  width: 280px;
+  margin-left: 95px;
   /* background-color:rgb(164, 85, 255); */
+}
+
+@media (max-width: 768px) {
+  .productdetail_detail_detail {
+    margin-left: 50px;
+  }
 }
 
 @media (max-width: 425px) {
   .productdetail_detail_detail {
+    margin: 0 auto;
     margin-top: 36px;
   }
 }
@@ -336,7 +338,7 @@ body {
     border-color: black;
   } */
 .productdetail_information {
-  width: 80%;
+  width: 240px;
   font-size: 16px;
   margin-top: 15px;
   height: 30px;
@@ -349,6 +351,12 @@ body {
           justify-content: space-between;
 }
 
+@media (max-width: 425px) {
+  .productdetail_information {
+    width: 100%;
+  }
+}
+
 /*-------------------- productdetail end --------------------*/
 /*---------------------navbar-------------------*/
 .Header {
@@ -358,6 +366,18 @@ body {
   background-color: #fff;
   border-bottom: 1px solid #000000;
   z-index: 2;
+}
+
+@media (max-width: 768px) {
+  .Header {
+    max-width: 768px;
+  }
+}
+
+@media (max-width: 425px) {
+  .Header {
+    max-width: 375px;
+  }
 }
 
 .navbar {
@@ -2155,6 +2175,11 @@ img.star-img {
   }
 }
 
+.UserProductDetail_detail img:nth-child(1) {
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
 .UserProductDetail_detail_description {
   width: 240px;
   margin-left: 80px;
@@ -2302,9 +2327,7 @@ img.star-img {
 .addCart-button {
   background-color: #000000;
   color: #fff;
-  width: 280px;
-  padding: 13px 0;
-  margin: 25px 0px;
+  width: 100%;
 }
 
 .cartlist {

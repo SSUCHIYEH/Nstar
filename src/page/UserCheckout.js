@@ -1,19 +1,22 @@
 import img_userIcon from "../assests/Icon/account.png";
 import CreditCardDetailModal from "../component/CreditCardDetailModal";
 import ShipDetailModal from "../component/ShipDetailModal";
-import { useState,useEffect } from "react";
+import { useState, useEffect } from "react";
 import React from "react";
-import { Link,useHistory } from 'react-router-dom';
-import { useSelector,useDispatch } from "react-redux";
+import { Link, useHistory } from 'react-router-dom';
+import { useSelector, useDispatch } from "react-redux";
 import { createOrder } from "../actions/productAction";
+import { Card } from "antd";
+import { ADD_CART_ITEM, CLEAN_CART_ITEMS } from "../const/constants";
 
 function UserCheckout() {
   const dispatch = useDispatch();
   const history = useHistory();
   const { orderProduct, orderDetail } = useSelector(state => {
     console.log(state);
-    return state.product})
-  const { userInfo } = useSelector(state=>state.userSignIn);
+    return state.product
+  })
+  const { userInfo } = useSelector(state => state.userSignIn);
   const [byremit, setbyRemit] = useState(false);
 
 
@@ -32,7 +35,7 @@ function UserCheckout() {
   const handlePaymentClick = (value = !byremit) => {
     setbyRemit(value);
   }
-  
+
   function TotalPrice() {
     return orderProduct.reduce((sum, item) => sum + item.price, 0)
   }
@@ -41,18 +44,18 @@ function UserCheckout() {
   async function handlePayTheCheck() {
     const product_item = createProductItems();
     const totalPrice = TotalPrice() + 60;
-    const payment = byremit? "信用卡付款":"銀行轉帳";
+    const payment = byremit ? "信用卡付款" : "銀行轉帳";
     const order = {
       "id": "string",
       "finish": false,
-      "payment":  payment,
+      "payment": payment,
       "address": `${shipName} ${shipPhone} ${shipAddress}`,
       "totalprice": totalPrice,
       "user_sell_id": orderProduct[0].owner.id,
       "user_buy_id": userInfo.user_id,
       "product_items": product_item
     }
-    await dispatch(createOrder(order,userInfo.user_id));
+    await dispatch(createOrder(order, userInfo.user_id));
   }
 
   function createProductItems() {
@@ -75,7 +78,16 @@ function UserCheckout() {
 
   useEffect(() => {
     console.log(orderDetail);
-    if(orderDetail){
+    if (orderDetail) {
+      let cartData = JSON.parse(localStorage.getItem("cartItems"))
+      delete cartData[orderProduct[0].owner.username];
+      console.log(cartData)
+      if (cartData) {
+        localStorage.setItem("cartItems", JSON.stringify(cartData));
+        dispatch({ type: ADD_CART_ITEM })
+      } else {
+        dispatch({ type: CLEAN_CART_ITEMS })
+      }
       history.push('/usercart/usercheckoutsuccess')
     }
   }, [orderDetail])

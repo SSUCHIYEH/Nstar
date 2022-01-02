@@ -7,6 +7,12 @@
   background-color: #fff;
   border-bottom: 1px solid #000000;;
   z-index: 2;
+  @include md{
+    max-width: 768px;
+  }
+  @include sm{
+    max-width: 375px;
+  }
 }
 .navbar {
   top: 0;

@@ -9,6 +9,7 @@ import UserCheckoutSuccess from '../page/UserCheckoutSuccess';
 import UserProductShop from '../page/UserProductsShop';
 import UserOrderQuery from '../page/UserOrderQuery';
 import UserLike from '../page/UserLike';
+import UserProductDetail from '../page/UserProductDetail';
 
 const routes = [
     {
@@ -55,6 +56,11 @@ const routes = [
     {
         path: '/userproductshop',
         component: UserProductShop,
+        exact: true,
+    },
+    {
+        path: '/userproductshop/detail/:product_id',
+        component: UserProductDetail,
         exact: true,
     },
     {
