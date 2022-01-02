@@ -6,11 +6,13 @@ import {routes} from './utils/route';
 import { renderRoutes } from 'react-router-config';
 import Footer from './component/Footer.js'
 import Navbar from './component/Navbar';
+import Spinner from './component/Spinner';
 
 function App() {
   return (
       <BrowserRouter>
         <Navbar />
+        <Spinner/>
         {renderRoutes(routes)}
         <Footer />
 
