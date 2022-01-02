@@ -2,21 +2,24 @@ import img_userIcon from "../assests/Icon/account_104.png";
 import Productlist from "../component/Productlist";
 import ProductCreateModal from "../component/ProductCreateModal";
 import { useState, useEffect } from "react";
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import { getUserProduct } from "../api/userAPI";
 import { productReducer } from "../reducer/productReducer";
-import { useSelector } from "react-redux";
+import { useSelector,useDispatch } from "react-redux";
 import Spinner from "../component/Spinner";
+import { SET_LOADING_FALSE, SET_LOADING_TRUE } from "../const/constants";
 
 function UserProductShop() {
+    const history = useHistory();
+    const dispatch = useDispatch();
     const [addModalShow, setAddModalShow] = useState(false);
     const { userInfo } = useSelector(state => {
         console.log(state);
         return state.userSignIn
     });
-    const {reload} = useSelector((state)=>state.product);
+    const { reload } = useSelector((state) => state.product);
     const [userProduct, setUserProduct] = useState(null);
-    
+
     useEffect(() => {
         if (userInfo) {
             getUserProduct(userInfo.user_id).then(resp => {
@@ -24,24 +27,34 @@ function UserProductShop() {
                     console.log(userProduct);
                     setUserProduct(resp.product)
                 }
+            }).catch((e)=>{
+                console.log(e);
             })
         }
     }, [reload])
+
     useEffect(() => {
         if (userInfo) {
+            dispatch({type:SET_LOADING_TRUE})
             getUserProduct(userInfo.user_id).then(resp => {
                 if (resp.status === 200) {
                     console.log(resp.product);
                     setUserProduct(resp.product)
                 }
+                dispatch({type:SET_LOADING_FALSE})
+            }).catch((e)=>{
+                console.log(e);
+                dispatch({type:SET_LOADING_FALSE})
             })
             console.log(userProduct);
+        }else{
+            history.push('/login');
         }
     }, [])
 
     return (
 
-        <div>
+        <>
             {addModalShow ? <ProductCreateModal changeShow={() => setAddModalShow(false)} />
                 : ""}
 
@@ -61,16 +74,18 @@ function UserProductShop() {
                         </div>
                     </div>
                     <p className="mt_72">復古/90/牛仔/古著<br />歡迎私訊詢問</p>
+                    {
+                        userProduct ?
+                            <Productlist products={userProduct} />
+                            : <p className="mt_36">還沒有新增商品</p>
+
+                    }
                 </div>
 
 
-
             </div>
-            {userProduct ?
-                <Productlist products={userProduct}/>
-                : <p>還沒有新增商品</p>
-            }
-        </div>
+
+        </>
 
 
     );

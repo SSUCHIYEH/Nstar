@@ -6,11 +6,14 @@ import {
     USER_SUCCESS_REGISTER,
     USER_FAIL_REGISTER,
     USER_CREATE_PRODUCT,
+    SET_LOADING_TRUE,
+    SET_LOADING_FALSE,
 } from '../const/constants';
 import { registerWithEmailPassword, signInWithEmailPassword, putUserProduct } from '../api/userAPI.js';
 
 export const login = (userInfo) => async (dispatch) => {
     try {
+        dispatch({type:SET_LOADING_TRUE})
         const resp = await signInWithEmailPassword(
             userInfo.email,
             userInfo.password
@@ -22,6 +25,7 @@ export const login = (userInfo) => async (dispatch) => {
                 payload: resp.user,
             })
             localStorage.setItem("userInfo", JSON.stringify(resp.user));
+            dispatch({type:SET_LOADING_FALSE})
             return resp.user;
         } else {
             dispatch({
@@ -29,6 +33,7 @@ export const login = (userInfo) => async (dispatch) => {
                 payload: `${resp.status} error!
               ${resp.detail}`,
             });
+            dispatch({type:SET_LOADING_FALSE})
             return null;
         }
     } catch (e) {
@@ -45,7 +50,7 @@ export const logout = () => async (dispatch) => {
 export const signUpRegister = (userInfo) => async (dispatch) => {
 
     try {
-
+        dispatch({type:SET_LOADING_TRUE})
         const resp = await registerWithEmailPassword(
             userInfo.name,
             userInfo.email,
@@ -59,6 +64,7 @@ export const signUpRegister = (userInfo) => async (dispatch) => {
                 payload: resp.user,
             });
             localStorage.setItem("userInfo", JSON.stringify(resp.user));
+            dispatch({type:SET_LOADING_FALSE})
             return resp.user;
         } else {
             console.log(`${resp.status} error! ${resp.detail}`);
@@ -66,6 +72,7 @@ export const signUpRegister = (userInfo) => async (dispatch) => {
                 type: USER_FAIL_REGISTER,
                 payload: `${resp.status} error! ${resp.detail}`,
             })
+            dispatch({type:SET_LOADING_FALSE})
             return null;
         }
     } catch (e) {
@@ -89,6 +96,7 @@ export const createProductByUserId = (user_id,product) => async(dispatch)=>{
             console.log(resp)
             return null; 
         }
+        
     } catch (e) {
         console.log(e)
         return null;  

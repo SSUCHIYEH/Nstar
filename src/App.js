@@ -7,11 +7,14 @@ import { renderRoutes } from 'react-router-config';
 import Footer from './component/Footer.js'
 import Navbar from './component/Navbar';
 import Spinner from './component/Spinner';
+import { useSelector } from 'react-redux';
 
 function App() {
+  const {loading} = useSelector(state => state.load)
   return (
       <BrowserRouter>
         <Navbar />
+        { loading ? <Spinner/> : null}
         {renderRoutes(routes)}
         <Footer />
 

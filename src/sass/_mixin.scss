@@ -19,6 +19,7 @@
   border: 1px solid $main_black;
   border-bottom: 0;
   box-sizing: border-box;
+  min-height: calc(100vh - 66px - 88px);
 }
 @mixin modal {
   display:block;
