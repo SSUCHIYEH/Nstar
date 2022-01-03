@@ -211,7 +211,7 @@ export default function NavBar() {
                                 </li>
                                 <li className="w_180 mt_16 ml_36">
                                     <li onClick={toggleHamburger}>
-                                        <NavItem to="/userorderquery" ><p className="font_black">查看購買紀錄</p></NavItem>
+                                        <NavItem to="/userorderquery/buy" ><p className="font_black">查看購買紀錄</p></NavItem>
                                     </li>
                                     <div className="line mt_8"></div>
                                 </li>
