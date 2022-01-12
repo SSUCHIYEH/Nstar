@@ -36,7 +36,7 @@ export default function Cart() {
                         <div className="cartlist_totlebox_btn">
                             <Button type="primary" className="cartlist_totlebox_btn_" 
                                 style={{ backgroundColor: 'black', borderColor: 'black' }}>
-                                去買單！
+                                去買單
                             </Button>
                         </div>
                     </div>
