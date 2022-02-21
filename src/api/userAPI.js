@@ -1,5 +1,5 @@
 import axios from ".";
-const baseURL = "https://nstar-backend.herokuapp.com"
+const baseURL = "https://nstar-backend-new.herokuapp.com/"
 
 export const signInWithEmailPassword = async (email, password) => {
   try {

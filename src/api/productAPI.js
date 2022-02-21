@@ -1,7 +1,7 @@
 import axios from ".";
 
 
-const baseURL = "https://nstar-backend.herokuapp.com"
+const baseURL = "https://nstar-backend-new.herokuapp.com/"
 export const getProductByCategory= async (_category)=>{
     try{
         const _url = `${baseURL}/api/v1/products/category/${_category}`;
